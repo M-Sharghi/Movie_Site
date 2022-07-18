@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home";
+import MoviePage from "./pages/Movie";
+import NowPlayingMoviePage from "./pages/Now_Playing_Movie";
+import UpcomingMoviePage from "./pages/Upcoming_Movie";
+import TopRatedMoviePage from "./pages/Top_Rated_Movie";
+import LatestMoviePage from "./pages/Latest_Movie";
+import TVShowsPage from "./pages/TV_Shows";
+import AiringTodayTVPage from "./pages/Airing_Today_TV";
+import OnTheAirTVPage from "./pages/On_The_Air_TV";
+import TopRatedTVPage from "./pages/Top_Rated_TV";
+import CategoriesPage from "./components/Categories";
+import SearchPage from "./components/Search";
+import PeoplePage from "./pages/People";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movie" element={<MoviePage />} />
+        <Route path="/movie/now_playing" element={<NowPlayingMoviePage />} />
+        <Route path="/movie/upcoming" element={<UpcomingMoviePage />} />
+        <Route path="/movie/top_rated" element={<TopRatedMoviePage />} />
+        <Route path="/movie/latest" element={<LatestMoviePage />} />
+        <Route path="/tv" element={<TVShowsPage />} />
+        <Route path="/tv/airing_today" element={<AiringTodayTVPage />} />
+        <Route path="/tv/on-the-air" element={<OnTheAirTVPage />} />
+        <Route path="/tv/top_rated" element={<TopRatedTVPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/people" element={<PeoplePage />} />
+        {/* <Route path="/people?:page" element={<PeoplePage />} /> */}
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
