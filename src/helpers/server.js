@@ -83,19 +83,4 @@ export async function get_popular_movie() {
     return data;
   }
 
-//   export async function get_coin(id) {
-//     let response = await fetch(`https://api.coincap.io/v2/assets/${id}`);
-//     let body = await response.json();
-//     let data = body.data;
-  
-//     return data;
-//   }
-  
-//   export async function get_Exchanges() {
-//     let response = await fetch("https://api.coincap.io/v2/exchanges");
-//     let body = await response.json();
-//     let data = body.data;
-  
-//     return data;
-//   }
 
