@@ -11,7 +11,7 @@ function Peoples(props){
                 let img_people=`${img_url}${item.profile_path}`;
               return (
                     <Pic_flex key={item.id}>
-                        <Link to="#"><Image src={img_people}></Image></Link>
+                        <Link to="#"><Image src={img_people} ></Image></Link>
                         <Link to="#"><People_name>{item.name}</People_name></Link>
                     </Pic_flex>
                 );

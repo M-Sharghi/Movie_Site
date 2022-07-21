@@ -31,7 +31,6 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/people" element={<PeoplePage />} />
-        {/* <Route path="/people?:page" element={<PeoplePage />} /> */}
       </Routes>
       </BrowserRouter>
     </div>

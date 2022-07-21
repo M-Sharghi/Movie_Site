@@ -17,8 +17,8 @@ let Pic_flex = styled.div`
 `;
 
 let Image = styled.img`
-    width: 235px;
-    height: 235px;
+    width: 237px;
+    height: 237px;
 `;
 
 

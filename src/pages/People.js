@@ -2,29 +2,30 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Peoples from "../components/Peoples";
 import {useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
 import {get_people} from "../helpers/server";
-import Paginations from "../components/Paginations";
+import Pagination from "../components/Pagination";
+
 
 function People(){
     let [data, setData] = useState([]);
+    let [page, setPage]=useState();
+    let [numberOfPages, setNumberOfPages]=useState();
     let [loading,setLoading]=useState(false);
-    let [pages,setPages]=useState(1);
   
     useEffect(() => {
         setLoading(true);
-        get_people().then((response) => {
+        get_people(page).then((response) => {
         setData(response.results);
-        setPages(response.page);
+        setNumberOfPages(response.total_pages)
         setLoading(false);
       });
-    }, [pages]);
+    }, [page]);
 
     return (
         <div>
             <Nav />
-            <Peoples list={data}  /> <br /><br />
-            <Paginations page={pages} />                      
+            <Peoples list={data} /> <br /><br />
+            <Pagination setPage={setPage} pageNumber={numberOfPages} />                      
             <Footer />
         </div>
     )
