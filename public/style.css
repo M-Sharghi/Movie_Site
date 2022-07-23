@@ -31,3 +31,11 @@
   .navpadding {
     padding: 24px 32px;
   }
+
+  .container {
+    background-color: #fff;
+    color: black;
+    padding: 64px;
+    text-align: left;
+    text-justify: distribute-all-lines;
+  }

@@ -1,4 +1,4 @@
-import { Container, Contacts, Logo, Legals } from "./styles";
+import { Container, Contacts, Logo, Legals, Policy } from "./styles";
 
 function Footer(){
     return (
@@ -11,8 +11,8 @@ function Footer(){
                 <Logo href="https://accounts.google.com/"><img src="./icons/email.svg" alt="email" /></Logo>
             </Contacts>
             <div><Legals>LEGALS</Legals>
-                <p><a href="">Terms of Service</a></p>
-                <p><a href="">Privacy Policy</a></p>
+                <Policy><a href="/Terms_Of_Service">Terms of Service</a></Policy>
+                <Policy><a href="#">Privacy Policy</a></Policy>
             </div>       
         </Container>
     )

@@ -12,6 +12,7 @@ import TopRatedTVPage from "./pages/Top_Rated_TV";
 import CategoriesPage from "./components/Categories";
 import SearchPage from "./components/Search";
 import PeoplePage from "./pages/People";
+import TermsOfServicePage from "./pages/Terms_Of_Service";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/people" element={<PeoplePage />} />
+        <Route path="/Terms_Of_Service" element={<TermsOfServicePage />} />
       </Routes>
       </BrowserRouter>
     </div>

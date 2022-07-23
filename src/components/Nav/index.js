@@ -8,17 +8,12 @@ function Nav(){
     return(
         <nav className="flex navpadding">
             <NavLinks className="flex">
-                <Link to="#"><img src="./icons/JMDB-logos_transparent.png" alt="logo" width="200px"/></Link>
-                <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home
-                </Link>
-                <Link to=""><Movie_Menu />
-                </Link>
-                <Link to=""><TVShows_Menu />
-                </Link>
-                <Link to="/categories" style={{fontSize:"20px", fontWeight: "bold"}}>Categories
-                </Link>
-                <Link to="/people" style={{fontSize:"20px", fontWeight: "bold"}}>People
-                </Link>
+                <Link to="/"><img src="./icons/JMDB-logos_transparent.png" alt="logo" width="200px"/></Link>
+                <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home</Link>
+                <Link to=""><Movie_Menu /></Link>
+                <Link to=""><TVShows_Menu /></Link>
+                <Link to="/people" style={{fontSize:"20px", fontWeight: "bold"}}>People</Link>
+                <Link to="/categories" style={{fontSize:"20px", fontWeight: "bold"}}>Categories</Link>
             </NavLinks>
             
 

@@ -8,6 +8,9 @@ let Container = styled.div`
 
 let Contacts = styled.div`
     padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 let Logo = styled.a`
@@ -15,9 +18,13 @@ let Logo = styled.a`
 `;
 
 let Legals = styled.h4`
-    font-size:16px;
+    font-size:18px;
     font-weight: bold;
 `;
 
+let Policy = styled.p`
+    font-size:14px;
+`;
 
-export { Container, Contacts, Logo, Legals };
+
+export { Container, Contacts, Logo, Legals, Policy };
