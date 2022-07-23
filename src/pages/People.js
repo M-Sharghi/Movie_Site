@@ -16,7 +16,7 @@ function People(){
         setLoading(true);
         get_people(page).then((response) => {
         setData(response.results);
-        setNumberOfPages(response.total_pages)
+        setNumberOfPages(response.total_pages);
         setLoading(false);
       });
     }, [page]);

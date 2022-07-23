@@ -23,4 +23,11 @@
     max-width: 1100px;
     margin: auto;
   }
-  
+
+  .welcome {
+    padding: 32px;
+  }
+
+  .navpadding {
+    padding: 24px 32px;
+  }

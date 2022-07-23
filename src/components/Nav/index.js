@@ -3,31 +3,22 @@ import {NavLinks, NavActions} from "./styles"
 import Movie_Menu from "../Movie_Menu";
 import TVShows_Menu from "../TVShows_Menu";
 
- 
-
-let activestyle={
-    color:"#6a5acd"
-};
 
 function Nav(){
     return(
-        <nav className="flex auto">
+        <nav className="flex navpadding">
             <NavLinks className="flex">
-            <NavLink to="/" style={(values)=>{
-                return values.isActive ? activestyle : undefined;}}>Home
-            </NavLink>
-            <NavLink to="#" style={(values)=>{
-                return values.isActive ? activestyle : undefined;}}><Movie_Menu />
-            </NavLink>
-            <NavLink to="/#" style={(values)=>{
-                return values.isActive ? activestyle : undefined;}}><TVShows_Menu />
-            </NavLink>
-            <NavLink to="/categories" style={(values)=>{
-                return values.isActive ? activestyle : undefined;}}>Categories
-            </NavLink>
-            <NavLink to="/people" style={(values)=>{
-                return values.isActive ? activestyle : undefined;}}>People
-            </NavLink>
+                <Link to="#"><img src="./icons/JMDB-logos_transparent.png" alt="logo" width="200px"/></Link>
+                <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home
+                </Link>
+                <Link to=""><Movie_Menu />
+                </Link>
+                <Link to=""><TVShows_Menu />
+                </Link>
+                <Link to="/categories" style={{fontSize:"20px", fontWeight: "bold"}}>Categories
+                </Link>
+                <Link to="/people" style={{fontSize:"20px", fontWeight: "bold"}}>People
+                </Link>
             </NavLinks>
             
 

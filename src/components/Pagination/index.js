@@ -11,9 +11,9 @@ export default function Paginations({setPage, pageNumber}){
     window.scroll(0,0);
   }
   return(
-    <Stack className="flex auto">
+    <Stack className="flex auto" style={{padding: "64px"}}>
       <Pagination
-        onChange={(event) =>handleChange(event.target.textContent)} 
+        onChange={(event) =>handleChange(event.target.textContent)}
         color="primary"
         size='large'
         sx={{ bgcolor:'#fafafa', borderRadius:'24px'}} 

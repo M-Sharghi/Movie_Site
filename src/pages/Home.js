@@ -16,7 +16,8 @@ function Home() {
     return (
       <div>
         <Nav />
-        {/* <CoinsList list={data} /> */}
+        <img src="./icons/movie_img.jpg"  alt="home_img"  height="700px" width="100%" /><h1 className="auto welcome">Welcome.
+            Millions of movies, TV shows and people to discover.</h1>
         <Footer />
       </div>
     );

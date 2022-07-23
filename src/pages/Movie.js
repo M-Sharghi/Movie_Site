@@ -15,19 +15,18 @@ function Movie(){
     useEffect(() => {
         setLoading(true);
         get_popular_movie(page).then((response) => {
-        setData(response);
-        /*=============== check shavad ===============*/
-        setNumberOfPages(response.total_pages)
+        setData(response.results);
+        setNumberOfPages(response.total_pages);
         setLoading(false);
       });
-    }, []);
+    }, [page]);
 
 
     return (
             <div>
                 <Nav />
                 <Movies list={data}/>
-                <Pagination setPage={setPage} pageNumber={numberOfPages} />
+                <Pagination setPage={setPage} pageNumber={500} />
                 <Footer />
             </div>
         )
