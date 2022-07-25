@@ -12,6 +12,7 @@ import TopRatedTVPage from "./pages/Top_Rated_TV";
 import CategoriesPage from "./components/Categories";
 import SearchPage from "./components/Search";
 import PeoplePage from "./pages/People";
+import PersonBioPage from "./pages/Person_Bio";
 import TermsOfServicePage from "./pages/Terms_Of_Service";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/people" element={<PeoplePage />} />
+        <Route path="/people/:id" element={<PersonBioPage />} />
         <Route path="/Terms_Of_Service" element={<TermsOfServicePage />} />
       </Routes>
       </BrowserRouter>

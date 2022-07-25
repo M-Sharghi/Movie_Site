@@ -8,7 +8,7 @@ function Nav(){
     return(
         <nav className="flex navpadding">
             <NavLinks className="flex">
-                <Link to="/"><img src="./icons/JMDB-logos_transparent.png" alt="logo" width="200px"/></Link>
+                <Link to="/"><img src="/icons/JMDB-logos_transparent.png" alt="logo" width="200px"/></Link>
                 <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home</Link>
                 <Link to=""><Movie_Menu /></Link>
                 <Link to=""><TVShows_Menu /></Link>
@@ -18,7 +18,7 @@ function Nav(){
             
 
             <NavActions className="flex">
-                <Link to="/search"><img src="./icons/search.svg" alt="search"/></Link>
+                <Link to="/search"><img src="/icons/search.svg" alt="search"/></Link>
                 <button>Login</button>
             </NavActions>
         </nav>
