@@ -101,8 +101,16 @@ export async function get_popular_movie(page) {
   }
 
   export async function get_person_images(id) {
-    let person_images=`${base_url}/person/${id}?api_key=${api_key}&language=en-US`;
+    let person_images=`${base_url}/person/${id}/images?api_key=${api_key}`;
     let response = await fetch(person_images);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+  export async function get_person_credits(id) {
+    let person_credits=`${base_url}/person/${id}/movie_credits?api_key=${api_key}&language=en-US`;
+    let response = await fetch(person_credits);
     let body = await response.json();
     let data = body;
     return data;

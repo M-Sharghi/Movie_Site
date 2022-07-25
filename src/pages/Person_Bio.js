@@ -2,7 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import {get_people, get_person_bio} from "../helpers/server";
+import {get_people, get_person_bio, get_person_images, get_person_credits} from "../helpers/server";
 import PersonBio from "../components/PersonBio";
 
 
@@ -11,6 +11,9 @@ function People(){
     let [data, setData] = useState([]);
     let [page, setPage]=useState();
     let [bio, setBio]=useState({});
+    let [images, setImages]=useState([]);
+    let [acting, setActing]=useState([]);
+    let [production, setProduction]=useState([]);
     let [loading,setLoading]=useState(false);
   
     useEffect(() => {
@@ -23,33 +26,22 @@ function People(){
         get_person_bio(id).then((response) => {
             setBio(response);
         });
+
+        get_person_images(id).then((response) => {
+            setImages(response.profiles);
+        });
+
+        get_person_credits(id).then((response) => {
+            setActing(response.cast);
+            setProduction(response.crew);
+        });
     }, []);
-
-
-    // useEffect(() => {
-    //     get_coin(name).then((response) => {
-    //       setData(response);
-    //     });
-    
-    //     get_coin(name).then((res) => {
-    //       setHistory(res);
-    //     });
-    
-    //     get_chart(name).then((res) => {
-    //       setChart(res);
-    //     });
-    
-    //     get_Exchanges().then((res) => {
-    //       setExchange(res);
-    //     });
-    
-    //   }, []);
 
 
     return (
         <div>
             <Nav />
-            <PersonBio list={bio}/>
+            <PersonBio list={bio} image={images} act={acting} production={production}/>
             <Footer />
         </div>
     )

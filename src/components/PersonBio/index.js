@@ -2,8 +2,8 @@ import { Pic_flex, Text_flex, Image} from "./styles";
 
 
 function PersonBio(props){
-    let img_url="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
-    let img_people=`${img_url}${props.list.profile_path}`;
+    let img_profile="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
+    let img_people=`${img_profile}${props.list.profile_path}`;
     let gender=`${props.list.gender}`==1 ? "Female" : "Male" ;
     return (
             <div className="flex auto">
@@ -20,6 +20,38 @@ function PersonBio(props){
                     <h3>Biography</h3>
                     <p style={{color:"#fff"}}>{props.list.biography}</p>
                 </Text_flex>
+                <div>
+                    <h1>Acting</h1>
+                    {props.act.map((item) => {
+                        return (
+                            <div>
+                                <div>{item.release_date} &bull; {item.title}</div>
+                            </div>   
+                        );
+                    })}
+                </div>
+                <div>
+                    {props.production.map((item) => {
+                        // <h1>{item.department}</h1>
+                        return (
+                            <div>
+                                <div>{item.release_date} &bull; {item.title}</div>
+                            </div>  
+                        );
+                    })}
+                </div>
+                <div>
+                    <h1>Images</h1>
+                    {props.image.map((item) => {
+                        let images="https://www.themoviedb.org/t/p/w220_and_h330_face/";
+                        let images_people=`${images}${item.file_path}`;
+                        return (
+                            <span>
+                                <img src={images_people} />
+                            </span>   
+                        );
+                    })}
+                </div>
             </div>
     );
 }
