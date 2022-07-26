@@ -1,4 +1,5 @@
-import { Pic_flex, Text_flex, Image} from "./styles";
+import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table} from "./styles";
+import {Link} from "react-router-dom";
 
 
 function PersonBio(props){
@@ -20,28 +21,44 @@ function PersonBio(props){
                     <h3>Biography</h3>
                     <p style={{color:"#fff"}}>{props.list.biography}</p>
                 </Text_flex>
-                <div>
-                    <h1>Acting</h1>
+                <h1>Acting Information</h1>
+                <Act_Container>
+                    <Table className="flex">
+                        <First_Col><h3>Release date</h3></First_Col>
+                        <Cols><h3>Title</h3></Cols>
+                        <Cols><h3>Character</h3></Cols>
+                    </Table>
                     {props.act.map((item) => {
+                        let release_date = `${item.release_date}` == "" ? " " : `${item.release_date}`;
+                        let character = `${item.character}` == "" ? " " : `${item.character}`;
                         return (
-                            <div>
-                                <div>{item.release_date} &bull; {item.title}</div>
-                            </div>   
+                            <Table className="flex">
+                                <First_Col>{release_date}</First_Col>
+                                <Cols>{item.title}</Cols>
+                                <Cols>{character}</Cols>
+                            </Table>   
                         );
                     })}
-                </div>
-                <div>
-                    {props.production.map((item) => {
-                        // <h1>{item.department}</h1>
+                </Act_Container>
+                <h1>Other Activity</h1>
+                <Act_Container>
+                    <Table className="flex">
+                        <First_Col><h3>Release date</h3></First_Col>
+                        <Cols><h3>Title</h3></Cols>
+                        <Cols><h3>Activity</h3></Cols>
+                    </Table>
+                    {props.crew.map((item) => {
                         return (
-                            <div>
-                                <div>{item.release_date} &bull; {item.title}</div>
-                            </div>  
+                            <Table className="flex">
+                                <First_Col>{item.release_date}</First_Col>
+                                <Cols>{item.title}</Cols>
+                                <Cols>{item.department}</Cols>
+                            </Table> 
                         );
                     })}
-                </div>
+                </Act_Container>
+                <h1>Images</h1>
                 <div>
-                    <h1>Images</h1>
                     {props.image.map((item) => {
                         let images="https://www.themoviedb.org/t/p/w220_and_h330_face/";
                         let images_people=`${images}${item.file_path}`;

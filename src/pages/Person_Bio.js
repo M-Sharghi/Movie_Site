@@ -41,7 +41,7 @@ function People(){
     return (
         <div>
             <Nav />
-            <PersonBio list={bio} image={images} act={acting} production={production}/>
+            <PersonBio data={data} list={bio} image={images} act={acting} crew={production}/>
             <Footer />
         </div>
     )

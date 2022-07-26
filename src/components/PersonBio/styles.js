@@ -25,5 +25,29 @@ let Image = styled.img`
     border-radius: 16px;
 `;
 
+let Act_Container = styled.div`
+    background-color: #fff;
+    color: #696969;
+    width: 100%;
+    padding: 24px 64px;
+    border-radius: 16px;
+`;
+let First_Col = styled.span`
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    width:25%;
+`;
 
-export { Pic_flex, Text_flex, Image };
+let Cols = styled.span`
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    width:37.5%;
+`;
+
+let Table = styled.div`
+    border-bottom: 1px solid #ccc;
+`;
+
+export { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table };
