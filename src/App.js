@@ -14,6 +14,7 @@ import SearchPage from "./components/Search";
 import PeoplePage from "./pages/People";
 import PersonBioPage from "./pages/Person_Bio";
 import MovieBioPage from "./pages/Movie_Bio";
+import TVShowsBioPage from "./pages/TV_Shows_Bio";
 import TermsOfServicePage from "./pages/Terms_Of_Service";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/people" element={<PeoplePage />} />
         <Route path="/people/:id" element={<PersonBioPage />} />
         <Route path="/movie/:id" element={<MovieBioPage />} />
+        <Route path="/tv/:id" element={<TVShowsBioPage />} />
         <Route path="/Terms_Of_Service" element={<TermsOfServicePage />} />
       </Routes>
       </BrowserRouter>

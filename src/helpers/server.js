@@ -147,3 +147,19 @@ export async function get_popular_movie(page) {
   //   let data = body;
   //   return data;
   // }
+
+  export async function get_tv_shows_bio(id) {
+    let tv_shows_bio=`${base_url}/tv/${id}?api_key=${api_key}&language=en-US`;
+    let response = await fetch(tv_shows_bio);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+  export async function get_tv_shows_credits(id) {
+    let tv_shows_credits=`${base_url}/tv/${id}/credits?api_key=${api_key}&language=en-US`;
+    let response = await fetch(tv_shows_credits);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }

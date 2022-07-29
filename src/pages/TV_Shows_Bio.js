@@ -2,13 +2,14 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { get_movie_bio, get_movie_credits, get_movie_recommendations} from "../helpers/server";
-import MovieBio from "../components/MovieBio";
+import { get_tv_shows_bio, get_tv_shows_credits, get_movie_recommendations} from "../helpers/server";
+import TVShowsBio from "../components/TVShowsBio";
 
 
-function Movie_Bio(){
+function TV_Shows_Bio(){
     let { id } = useParams();
     let [bio, setBio]=useState({});
+    let [seasons, setSeasons]=useState([]);
     let [acting, setActing]=useState([]);
     let [production, setProduction]=useState([]);
     let [recommendations, setRecommendations]=useState([]);
@@ -17,12 +18,13 @@ function Movie_Bio(){
 
     useEffect(() => {
         // setLoading(true);
-        get_movie_bio(id).then((response) => {
+        get_tv_shows_bio(id).then((response) => {
             setBio(response);
+            setSeasons(response.seasons)
 
         });
 
-        get_movie_credits(id).then((response) => {
+        get_tv_shows_credits(id).then((response) => {
             setActing(response.cast);
             setProduction(response.crew);
         });
@@ -37,10 +39,10 @@ function Movie_Bio(){
     return (
         <div>
             <Nav />
-            <MovieBio list={bio} act={acting} crew={production} recommendation={recommendations}/>
+            <TVShowsBio list={bio} season={seasons} act={acting} crew={production} recommendation={recommendations}/>
             <Footer />
         </div>
     )
 }
 
-export default Movie_Bio;
+export default TV_Shows_Bio;

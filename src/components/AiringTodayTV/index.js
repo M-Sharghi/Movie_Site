@@ -10,8 +10,8 @@ function Airing_Today(props){
                 let img_airing_today_tv=`${img_url}${item.poster_path}`;
               return (
                 <Pic_flex key={item.id}>
-                    <Link to="#"><Image src={img_airing_today_tv}></Image></Link>
-                    <Link to="#"><TVShows_name>{item.name}</TVShows_name></Link>
+                    <Link to={`/tv/${item.id}`}><Image src={img_airing_today_tv}></Image></Link>
+                    <Link to={`/tv/${item.id}`}><TVShows_name>{item.name}</TVShows_name></Link>
                 </Pic_flex>   
                 );
             })}

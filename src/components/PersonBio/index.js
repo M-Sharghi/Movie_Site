@@ -61,8 +61,9 @@ function PersonBio(props){
                         );
                     })}
                 </Act_Container>
-                <h1>Images</h1>
                 <div>
+                    <h1 className="flex">Images</h1>
+                    <div>
                     {props.image.map((item) => {
                         let images="https://www.themoviedb.org/t/p/w220_and_h330_face/";
                         let images_people=`${images}${item.file_path}`;
@@ -72,6 +73,7 @@ function PersonBio(props){
                             </span>   
                         );
                     })}
+                    </div><br />
                 </div>
             </div>
     );
