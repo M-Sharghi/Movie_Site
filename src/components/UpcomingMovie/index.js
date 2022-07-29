@@ -10,8 +10,8 @@ function Upcoming(props){
                 let img_upcoming_movie=`${img_url}${item.poster_path}`;
               return (
                 <Pic_flex key={item.id}>
-                    <Link to="#"><Image src={img_upcoming_movie}></Image></Link>
-                    <Link to="#"><Movie_name>{item.title}</Movie_name></Link>
+                    <Link to={`/movie/${item.id}`}><Image src={img_upcoming_movie}></Image></Link>
+                    <Link to={`/movie/${item.id}`}><Movie_name>{item.title}</Movie_name></Link>
                 </Pic_flex>   
                 );
             })}

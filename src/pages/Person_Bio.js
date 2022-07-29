@@ -6,7 +6,7 @@ import {get_people, get_person_bio, get_person_images, get_person_credits} from 
 import PersonBio from "../components/PersonBio";
 
 
-function People(){
+function Person_Bio(){
     let { id } = useParams();
     let [data, setData] = useState([]);
     let [page, setPage]=useState();
@@ -47,4 +47,4 @@ function People(){
     )
 }
 
-export default People;
+export default Person_Bio;

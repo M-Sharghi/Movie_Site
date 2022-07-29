@@ -115,3 +115,35 @@ export async function get_popular_movie(page) {
     let data = body;
     return data;
   }
+
+  export async function get_movie_bio(id) {
+    let movie_bio=`${base_url}/movie/${id}?api_key=${api_key}&language=en-US`;
+    let response = await fetch(movie_bio);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+  export async function get_movie_credits(id) {
+    let movie_credits=`${base_url}/movie/${id}/credits?api_key=${api_key}&language=en-US`;
+    let response = await fetch(movie_credits);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+  export async function get_movie_recommendations(id) {
+    let movie_recommendations=`${base_url}/movie/${id}/recommendations?api_key=${api_key}&language=en-US`;
+    let response = await fetch(movie_recommendations);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+  // export async function get_movie_images(id) {
+  //   let movie_images=`${base_url}/person/${id}/images?api_key=${api_key}`;
+  //   let response = await fetch(movie_images);
+  //   let body = await response.json();
+  //   let data = body;
+  //   return data;
+  // }

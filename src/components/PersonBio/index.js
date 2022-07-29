@@ -5,11 +5,15 @@ import {Link} from "react-router-dom";
 function PersonBio(props){
     let img_profile="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
     let img_people=`${img_profile}${props.list.profile_path}`;
-    let gender=`${props.list.gender}`==1 ? "Female" : "Male" ;
+    let gender=`${props.list.gender}`==1 ? "Female" : "Male" ; /* check gender*/
+    let woman_img="/icons/woman.jpg";
+    let man_img="/icons/man.jpg";
+    let gender_img=`${props.list.gender}`==1 ? `${woman_img}` : `${man_img}` ; /* check img gender*/
+    let img_is_null=`${props.list.profile_path}`!== "null" ? `${img_people}` : `${gender_img}` ; /* check if img is null*/
     return (
             <div className="flex auto">
                 <Pic_flex key={props.list.id}>
-                    <span><Image src={img_people}></Image></span><br /><br />
+                    <span><Image src={img_is_null}></Image></span><br /><br />
                     <h2>Personal Info</h2>
                     <h4>Known For : {props.list.known_for_department}</h4>
                     <h4>Gender : {gender}</h4>
@@ -19,7 +23,7 @@ function PersonBio(props){
                 <Text_flex>
                     <h1>{props.list.name}</h1>
                     <h3>Biography</h3>
-                    <p style={{color:"#fff"}}>{props.list.biography}</p>
+                    <p>{props.list.biography}</p>
                 </Text_flex>
                 <h1>Acting Information</h1>
                 <Act_Container>
