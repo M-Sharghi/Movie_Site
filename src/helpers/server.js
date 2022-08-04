@@ -163,3 +163,11 @@ export async function get_popular_movie(page) {
     let data = body;
     return data;
   }
+
+  export async function get_multi_search(page,name) {
+    let multi_search=`${base_url}/search/multi?api_key=${api_key}&language=en-US&page=${page}&query=${name}`;
+    let response = await fetch(multi_search);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }

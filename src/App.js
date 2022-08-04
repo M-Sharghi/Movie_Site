@@ -10,7 +10,7 @@ import AiringTodayTVPage from "./pages/Airing_Today_TV";
 import OnTheAirTVPage from "./pages/On_The_Air_TV";
 import TopRatedTVPage from "./pages/Top_Rated_TV";
 import CategoriesPage from "./components/Categories";
-import SearchPage from "./components/Search";
+import SearchPage from "./pages/Search";
 import PeoplePage from "./pages/People";
 import PersonBioPage from "./pages/Person_Bio";
 import MovieBioPage from "./pages/Movie_Bio";

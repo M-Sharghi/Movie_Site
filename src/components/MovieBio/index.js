@@ -25,7 +25,7 @@ function MovieBio(props){
                     <p>{props.list.overview}</p>
                 </Text_flex>
                 <h1>Top Billed Cast</h1>
-                <div>
+                <div className="auto">
                     {props.act.map((item) => {
                         let images="https://www.themoviedb.org/t/p/w138_and_h175_face/";
                         let images_people=`${images}${item.profile_path}`;
