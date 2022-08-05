@@ -9,7 +9,7 @@ import TVShowsPage from "./pages/TV_Shows";
 import AiringTodayTVPage from "./pages/Airing_Today_TV";
 import OnTheAirTVPage from "./pages/On_The_Air_TV";
 import TopRatedTVPage from "./pages/Top_Rated_TV";
-import CategoriesPage from "./components/Categories";
+import CategoryPage from "./pages/Category";
 import SearchPage from "./pages/Search";
 import PeoplePage from "./pages/People";
 import PersonBioPage from "./pages/Person_Bio";
@@ -32,7 +32,7 @@ function App() {
         <Route path="/tv/airing_today" element={<AiringTodayTVPage />} />
         <Route path="/tv/on-the-air" element={<OnTheAirTVPage />} />
         <Route path="/tv/top_rated" element={<TopRatedTVPage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/categories" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/people" element={<PeoplePage />} />
         <Route path="/people/:id" element={<PersonBioPage />} />

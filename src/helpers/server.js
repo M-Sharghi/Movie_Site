@@ -171,3 +171,19 @@ export async function get_popular_movie(page) {
     let data = body;
     return data;
   }
+
+  export async function get_movie_genre() {
+    let movie_genre=`${base_url}/genre/movie/list?api_key=${api_key}&language=en-US`;
+    let response = await fetch(movie_genre);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+  export async function get_tv_shows_genre() {
+    let tv_shows_genre=`${base_url}/genre/tv/list?api_key=${api_key}&language=en-US`;
+    let response = await fetch(tv_shows_genre);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }

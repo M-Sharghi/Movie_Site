@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import {NavLinks, NavActions} from "./styles"
+import {Nav_Container, NavLinks, NavActions} from "./styles"
 import Movie_Menu from "../Movie_Menu";
 import TVShows_Menu from "../TVShows_Menu";
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 
 
 
 function Nav(){               
     return(
-        <nav className="flex navpadding">
+        <Nav_Container className="flex navpadding">
             <NavLinks className="flex">
                 <Link to="/"><img src="/icons/JMDB-logos_transparent.png" alt="logo" width="200px"/></Link>
                 <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home</Link>
@@ -20,10 +18,10 @@ function Nav(){
             </NavLinks>
 
             <NavActions className="flex">
-                <Link to="/search"><img src="/icons/search.svg" alt="search"/></Link>
+                {/* <Link to="/search"><img src="/icons/search.svg" alt="search"/></Link> */}
                 {/* <button>Login</button> */}
             </NavActions>
-        </nav>
+        </Nav_Container>
     );
 }
 
