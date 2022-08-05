@@ -25,10 +25,10 @@ export default function App() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} component={Link} to="/tv" sx={{ color:'#7c4dff' }}>Popular</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/tv/airing_today" sx={{ color:'#7c4dff' }}>Airing Today</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/tv/on-the-air" sx={{ color:'#7c4dff' }}>On TV</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/tv/top_rated" sx={{ color:'#7c4dff' }}>Top Rated</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to="/tv" sx={{ color:'#424242' }}>Popular</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to="/tv/airing_today" sx={{ color:'#424242' }}>Airing Today</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to="/tv/on-the-air" sx={{ color:'#424242' }}>On TV</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to="/tv/top_rated" sx={{ color:'#424242' }}>Top Rated</MenuItem>
         {/* <MenuItem onClick={handleClose} component={Link} to="/tv/latest" sx={{ bgcolor: '#212121',color:'#7c4dff' }}>Latest</MenuItem> */}
       </Menu>
     </div>

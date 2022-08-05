@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import {useState, useEffect} from "react";
 import {get_movie_genre, get_tv_shows_genre} from "../helpers/server";
+import {Link} from "react-router-dom";
 
 function filter_movie(movie){
     return movie.filter((item)=>{
@@ -19,6 +20,7 @@ function Category(){
     let [selected, setSelected] = useState("movie");
     let [movie, setMovie] = useState([]);
     let [tv, setTV] = useState([]);
+    let [id, setId] = useState({});
     let [loading,setLoading]=useState(false);
 
     useEffect(() => {
@@ -36,6 +38,7 @@ function Category(){
 
     let choice = selected === "movie" ?  filter_movie(movie) : filter_tv(tv) ;
     let genres = choice.map((item)=>{
+    let id=`${item.id}`
         return(
             <div>
                 {item.name}
@@ -53,7 +56,7 @@ function Category(){
                         <a href="#" onClick={()=>{setSelected("TV Show")}}>TV Shows</a>
                     </button>
                     <div>
-                        <a style={{width: "100px", backgroundColor: "#6495ED", margin:"16px", borderRadius:"8px"}}>{genres}</a>
+                        <Link to="/genres" style={{width: "100px", backgroundColor: "#6495ED", margin:"16px", borderRadius:"8px"}}>{genres}</Link>
                     </div>
                 </div>
                 <Footer />

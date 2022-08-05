@@ -187,3 +187,11 @@ export async function get_popular_movie(page) {
     let data = body;
     return data;
   }
+
+  export async function get_movie_details(id) {
+    let movie_details=`${base_url}/movie/${id}?api_key=${api_key}&language=en-US`;
+    let response = await fetch(movie_details);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
