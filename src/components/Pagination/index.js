@@ -17,7 +17,7 @@ export default function Paginations({setPage, pageNumber}){
         sx={{ bgcolor:'#fafafa', borderRadius:'24px'}} 
         count={pageNumber} 
         shape="circular" 
-        variant="outlined"/>
+        variant="standard"/>
     </Stack>
   )
 }

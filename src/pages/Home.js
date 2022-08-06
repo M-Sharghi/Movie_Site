@@ -16,10 +16,10 @@ function Home() {
     return (
       <div>
         <Nav />
-        <img src="./icons/movie_img.jpg"  alt="home_img"  height="300px" width="100%" />
+        <img src="./icons/movie_img.jpg"  alt="home_img"  height="600px" width="100%" style={{ maxWidth:"100%"}}/>
         <h1 className="auto welcome">Welcome. Millions of movies, TV shows and people to discover.</h1>
-        <input type="text" placeholder="Search ..." style={{width:"500px",  borderRadius:"48px", padding:"20px", margin:"32px", border:"none", fontSize:"20px"}}></input>
-        <div><img src="./icons/movieLogo.jpg"  style={{width:"200px", paddingBottom:"32px"}}  /></div>
+        <input type="search" placeholder="Search for ..." style={{width:"500px",  borderRadius:"48px", padding:"20px",  border:"none", fontSize:"20px"}}></input>
+        <div><img src="./icons/movieLogo.jpg"  style={{width:"200px", padding:"24px"}}  /></div>
         <Footer />
       </div>
     );
