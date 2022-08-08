@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import {useState, useEffect} from "react";
 import {get_top_rated_movie} from "../helpers/server";
 import Pagination from "../components/Pagination";
+import Search from "../components/MovieSearch";
 
 
 function Top_Rated_Movie(){
@@ -25,6 +26,10 @@ function Top_Rated_Movie(){
     return (
             <div>
                 <Nav />
+                <div className=" auto flex">
+                    <h1>Top Rated Movies</h1>
+                    <Search list={data} />
+                </div>
                 <TopRatedMovie list={data}/>
                 <Pagination setPage={setPage} pageNumber={500} />
                 <Footer />

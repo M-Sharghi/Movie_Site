@@ -4,7 +4,6 @@ import MoviePage from "./pages/Movie";
 import NowPlayingMoviePage from "./pages/Now_Playing_Movie";
 import UpcomingMoviePage from "./pages/Upcoming_Movie";
 import TopRatedMoviePage from "./pages/Top_Rated_Movie";
-import LatestMoviePage from "./pages/Latest_Movie";
 import TVShowsPage from "./pages/TV_Shows";
 import AiringTodayTVPage from "./pages/Airing_Today_TV";
 import OnTheAirTVPage from "./pages/On_The_Air_TV";
@@ -27,7 +26,6 @@ function App() {
         <Route path="/movie/now_playing" element={<NowPlayingMoviePage />} />
         <Route path="/movie/upcoming" element={<UpcomingMoviePage />} />
         <Route path="/movie/top_rated" element={<TopRatedMoviePage />} />
-        <Route path="/movie/latest" element={<LatestMoviePage />} />
         <Route path="/tv" element={<TVShowsPage />} />
         <Route path="/tv/airing_today" element={<AiringTodayTVPage />} />
         <Route path="/tv/on-the-air" element={<OnTheAirTVPage />} />

@@ -4,7 +4,7 @@ import Peoples from "../components/Peoples";
 import {useState, useEffect} from "react";
 import {get_people} from "../helpers/server";
 import Pagination from "../components/Pagination";
-import Search from "../components/Searches";
+import Search from "../components/PeopleSearch";
 
 
 function People(){

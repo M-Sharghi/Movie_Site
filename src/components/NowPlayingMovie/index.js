@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 
 function Now_Playing(props){
     return (
-        <div><h1>Now Playing Movies</h1>
             <div className="flex auto">
             {props.list.map((item,page) => {
                 let img_url="https://www.themoviedb.org/t/p/w220_and_h330_face/";
@@ -16,7 +15,6 @@ function Now_Playing(props){
                 );
             })}
             </div>
-        </div>
     )
 }
 

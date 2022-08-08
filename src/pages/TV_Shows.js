@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import {useState, useEffect} from "react";
 import {get_popular_tv_shows} from "../helpers/server";
 import Pagination from "../components/Pagination";
+import Search from "../components/TVSearch";
 
 
 function TV_Shows(){
@@ -11,6 +12,7 @@ function TV_Shows(){
     let [page, setPage]=useState();
     let [numberOfPages, setNumberOfPages]=useState();
     let [loading,setLoading]=useState(false);
+    let [val,setVal]=useState("");
 
     useEffect(() => {
         setLoading(true);
@@ -25,6 +27,10 @@ function TV_Shows(){
     return (
             <div>
                 <Nav />
+                <div className=" auto flex">
+                    <h1>Popular TV Shows</h1>
+                    <Search list={data} />
+                </div>
                 <TVShows list={data}/>
                 <Pagination setPage={setPage} pageNumber={500} />
                 <Footer />

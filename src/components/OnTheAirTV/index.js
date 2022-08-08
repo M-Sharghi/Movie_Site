@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 
 function On_The_Air(props){
     return (
-        <div><h1>Currently Airing TV Shows</h1>
             <div className="flex auto">
             {props.list.map((item) => {
                 let img_url="https://www.themoviedb.org/t/p/w220_and_h330_face/";
@@ -16,7 +15,6 @@ function On_The_Air(props){
                 );
             })}
             </div>
-        </div>
     )
 }
 
