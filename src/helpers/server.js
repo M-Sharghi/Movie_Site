@@ -195,3 +195,11 @@ export async function get_popular_movie(page) {
     let data = body;
     return data;
   }
+
+  export async function get_discover_movie(page) {
+    let discover_movie=`${base_url}/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`;
+    let response = await fetch(discover_movie);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }

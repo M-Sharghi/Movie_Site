@@ -21,9 +21,7 @@ function Category(){
     let [selected, setSelected] = useState("movie");
     let [movie, setMovie] = useState([]);
     let [tv, setTV] = useState([]);
-    let [genres, setGenres] = useState("");
     let [loading,setLoading]=useState(false);
-    // console.log(genres);
 
 
     useEffect(() => {

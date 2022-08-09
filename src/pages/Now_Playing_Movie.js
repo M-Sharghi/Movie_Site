@@ -7,12 +7,12 @@ import Pagination from "../components/Pagination";
 import Search from "../components/MovieSearch";
 
 
-
 function Now_Playing_Movie(){
     let [data, setData] = useState([]);
     let [page, setPage]=useState();
     let [numberOfPages, setNumberOfPages]=useState();
     let [loading,setLoading]=useState(false);
+
 
     useEffect(() => {
         setLoading(true);
