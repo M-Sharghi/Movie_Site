@@ -35,11 +35,16 @@ function People(){
                 let img_movie=`${img_url}${item.poster_path}`;
                 return (
                     <div key={index}>
-                        <Link to={`/movie/${item.id}`}><img src={img_movie} /></Link>
                             {item.genre_ids.map((subitem) => {
-                            let genre = genres_id == subitem ? `${item.title}` : "" ;   
+                            let genre = genres_id == subitem ? `${item.title}` : "" ; 
+                            let pic = genres_id == subitem ? `${img_movie}` : "" ;  
                                 return (
-                                    <div>{genre}</div> 
+                                    <div>
+                                        <Link to={`/movie/${item.id}`}>
+                                            <div>{genre}</div>
+                                            <img src={pic} />
+                                        </Link>
+                                    </div>   
                                 );
                             })}
                     </div>

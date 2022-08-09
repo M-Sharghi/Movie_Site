@@ -45,7 +45,7 @@ function Category(){
         return(
                 <div style={{margin:12}}>
                     <div style={{width:300,backgroundImage: "linear-gradient(90deg,#9a6dfb -7.22%,#5dc7fc 109.17%)",margin:"auto",padding:16,borderRadius:32}}>
-                        <Link to={`/genres/${item.id}` }>
+                        <Link to={`/genres/${item.id}`}>
                             {item.name}
                         </Link>
                     </div>
