@@ -7,7 +7,7 @@ import TVShows_Menu from "../TVShows_Menu";
 
 function Nav(){               
     return(
-        <Nav_Container className="navpadding">
+        <Nav_Container className="flex navpadding">
             <NavLinks className="flex">
                 <Link to="/"><img src="/icons/JMDB-logos_purple.png" alt="logo" width="200px"/></Link>
                 <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home</Link>

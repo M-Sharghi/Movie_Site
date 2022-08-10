@@ -9,6 +9,7 @@ import Search from "../components/PeopleSearch";
 
 function People(){
     let [data, setData] = useState([]);
+    console.log(data);
     let [page, setPage]=useState();
     let [numberOfPages, setNumberOfPages]=useState();
     let [loading,setLoading]=useState(false);
@@ -25,11 +26,11 @@ function People(){
     return (
         <div>
             <Nav />
-            <div className=" auto flex">
+            <div className="auto flex">
                 <h1>Popular People</h1>
                 <Search list={data} />
             </div>
-            <Peoples list={data} /> <br /><br />
+            <Peoples list={data} />
             <Pagination setPage={setPage} pageNumber={numberOfPages} />                      
             <Footer />
         </div>

@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
@@ -11,8 +11,6 @@ const theme = createTheme({
       },
     },
   });
-
-
 
 function Filter(props){
     const [val,setVal]=useState("");
@@ -42,8 +40,5 @@ function Filter(props){
             />                       
          );
     }
-
-  
-
 export default Filter;
 

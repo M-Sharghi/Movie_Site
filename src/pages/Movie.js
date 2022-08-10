@@ -26,7 +26,7 @@ function Movie(){
     return (
             <div>
                 <Nav />
-                <div className=" auto flex">
+                <div className="auto flex">
                     <h1>Popular Movies</h1>
                     <Search list={data} />
                 </div>

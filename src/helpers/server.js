@@ -5,7 +5,6 @@ let base_url="https://api.themoviedb.org/3";
 
 export async function get_people(page) {
   let popular_people=`${base_url}/person/popular?api_key=${api_key}&page=${page}`;
-  console.log(popular_people);
   let response = await fetch(popular_people);
   let body = await response.json();
   let data = body;

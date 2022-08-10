@@ -10,7 +10,6 @@ let Nav_Container = styled.nav`
 
 let NavLinks = styled.div`
   width: 60%;
-  max-width: 1100px;
 `;
 
 
