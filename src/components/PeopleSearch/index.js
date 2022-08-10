@@ -22,7 +22,7 @@ function Filter(props){
                 autoHighlight={true}
                 value={val}
                 options={props.list.map((item)=>{
-                    return{label:item.name,id:item.id}
+                    return{label:item.title,id:item.id}
                 })}
                 sx={{ width: 400}}
                 renderInput={(params) => <ThemeProvider theme={theme}>
@@ -34,7 +34,7 @@ function Filter(props){
                     label="Search ..." 
                     variant='standard'/>
                     </ThemeProvider>}
-                onChange={(e,data)=>{
+                    onChange={(e,data)=>{
                     setVal(data);
                     navigate(`/people/${data.id}`);
                 }}

@@ -36,7 +36,7 @@ function App() {
         <Route path="/movie/:id" element={<MovieBioPage />} />
         <Route path="/tv/:id" element={<TVShowsBioPage />} />
         <Route path="/Terms_Of_Service" element={<TermsOfServicePage />} />
-        <Route path="/genres/:genres_id" element={<GenresPage />} />
+        <Route path="/genres/:genre/:genre_name/:genre_id" element={<GenresPage />} />
       </Routes>
       </BrowserRouter>
     </div>

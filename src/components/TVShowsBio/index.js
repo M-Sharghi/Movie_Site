@@ -23,24 +23,6 @@ function TVShowsBio(props){
                     <h3>overview</h3>
                     <p>{props.list.overview}</p>
                 </Text_flex>
-                {/* <h1>Seasons</h1>
-                <div className="flex">
-                {props.season.map((item) => {
-                        let images="https://www.themoviedb.org/t/p/w130_and_h145_bestv2/";
-                        let images_season=`${images}${item.poster_path}`;
-                        return (
-                            <div key={item.id}>
-                                <div>
-                                    <img src={images_season} style={{width:"138px", height:"175px"}}/>
-                                    <h4>Season Number: {item.season_number}</h4>
-                                    <h4>Eeason Count: {item.episode_count}</h4>
-                                    <h4>Air Date: {item.air_date}</h4>
-                                    <p>Overview: {item.overview}</p>
-                                </div>
-                            </div>   
-                        );
-                    })}
-                </div> */}
                 <div>
                     <h1 className="flex">Series Cast</h1>
                     <div>
@@ -79,18 +61,6 @@ function TVShowsBio(props){
                         })}
                     </Act_Container>
                 </div>
-                {/* <h1>Images</h1>
-                <div>
-                    {props.image.map((item) => {
-                        let images="https://www.themoviedb.org/t/p/w500_and_h282_face/";
-                        let images_people=`${images}${item.file_path}`;
-                        return (
-                            <span>
-                                <img src={images_people} />
-                            </span>   
-                        );
-                    })}
-                </div> */}
             </div>
     );
 }

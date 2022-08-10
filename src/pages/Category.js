@@ -40,25 +40,25 @@ function Category(){
 
     let filter_choice = selected === "movie" ?  filter_movie(movie) : filter_tv(tv) ;
     let movie_css = selected === "movie" ?  "btn_show" : "" ;
-    let tv_css = selected === "TV Show" ?  "btn_show" : "" ;
+    let tv_css = selected === "tv" ?  "btn_show" : "" ;
     let choice = filter_choice.map((item)=>{
         return(
-                <div style={{margin:12}}>
-                    <div style={{width:300,backgroundImage: "linear-gradient(90deg,#9a6dfb -7.22%,#5dc7fc 109.17%)",margin:"auto",padding:16,borderRadius:32}}>
-                        <Link to={`/genres/${item.id}`}>
-                            {item.name}
-                        </Link>
-                    </div>
-                </div>    
-    )});
+            <div style={{margin:12}}>
+                <div style={{width:300,backgroundImage: "linear-gradient(90deg,#9a6dfb -7.22%,#5dc7fc 109.17%)",margin:"auto",padding:16,borderRadius:32}}>
+                    <Link to={`/genres/${selected}/${item.name}/${item.id}`}>
+                        {item.name}
+                    </Link>
+                </div>
+            </div>    
+        )});
 
-    return (
+        return(
             <div>
                 <Nav />
                 <div>
                     <button className="auto flex" style={{width:450,backgroundColor:"#232328", border:"none", borderRadius: "24px", padding: "0px 32px", fontWeight: "bold", marginTop:"48px",marginBottom:"24px",fontSize:24}}>
-                        <a className={movie_css} href="#" onClick={()=>{setSelected("movie")}}>Movie</a>
-                        <a className={tv_css} href="#" onClick={()=>{setSelected("TV Show")}}>TV Shows</a>
+                        <a className={movie_css} style={{cursor:"pointer"}} onClick={()=>{setSelected("movie")}}>Movie</a>
+                        <a className={tv_css} style={{cursor:"pointer"}} onClick={()=>{setSelected("tv")}}>TV Shows</a>
                     </button><hr />
                     <div style={{marginTop:"32px"}}></div>
                     <div className="auto flex">

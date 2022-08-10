@@ -15,7 +15,7 @@ function TV_Shows_Bio(){
     let [recommendations, setRecommendations]=useState([]);
     let [loading,setLoading]=useState(false);
   
-
+    
     useEffect(() => {
         // setLoading(true);
         get_tv_shows_bio(id).then((response) => {

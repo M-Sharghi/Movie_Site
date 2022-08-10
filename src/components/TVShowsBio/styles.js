@@ -34,8 +34,7 @@ let Act_Container = styled.div`
     margin-bottom: 32px;
 `;
 let First_Col = styled.span`
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px 0px;
     text-align: left;
     width:25%;
 `;

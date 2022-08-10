@@ -16,6 +16,8 @@ function Person_Bio(){
     let [production, setProduction]=useState([]);
     let [loading,setLoading]=useState(false);
   
+    console.log(acting);
+
     useEffect(() => {
         // setLoading(true);
         get_people().then((response) => {
