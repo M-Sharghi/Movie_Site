@@ -9,7 +9,6 @@ import Search from "../components/PeopleSearch";
 
 function People(){
     let [data, setData] = useState([]);
-    console.log(data);
     let [page, setPage]=useState();
     let [numberOfPages, setNumberOfPages]=useState();
     let [loading,setLoading]=useState(false);
