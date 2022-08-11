@@ -29,15 +29,15 @@ function Home() {
           type="search"
           placeholder="Search for ..."
           style={{
-            width: "600px",
+            width: "650px",
             borderRadius: "48px",
             padding: "24px",
             border: "none",
             fontSize: "20px",
           }}
         ></input><br />
-        <div className="auto" style={{width:'600px', textAlign:"left", padding:"16px 32px", borderRadius:16}}>
-        {data.map((item)=>{
+        <div className="auto" style={{width:'700px', textAlign:"left", padding:"16px 32px", borderRadius:16}}>
+        {data.slice(0, 8).map((item)=>{
           let img_url="https://www.themoviedb.org/t/p/w94_and_h141_bestv2";
           let img_people=`${img_url}${item.profile_path || item.poster_path}`;
           let woman_img="/icons/woman.jpg";
