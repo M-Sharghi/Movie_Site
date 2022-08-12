@@ -69,7 +69,7 @@ function PersonBio(props){
                         let images_people=`${images}${item.file_path}`;
                         return (
                             <span>
-                                <img src={images_people} />
+                                <img src={images_people} style={{width:138, height: "175px"}}/>
                             </span>   
                         );
                     })}

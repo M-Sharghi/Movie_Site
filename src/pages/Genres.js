@@ -50,7 +50,7 @@ function People() {
           return (
             <div key={index} style={{ width: 235 }}>
               <div className="Pages_Picflex">
-                <Link to={`/movie/${item.id}`}>
+                <Link to={`/${genre}/${item.id}`}>
                   <img className="Pages_Image" src={img_movie} />
                 </Link>
                 <div className="Pages_Chart">
@@ -68,7 +68,7 @@ function People() {
                 </div>
               </div>
               <br />
-              <Link to={`/movie/${item.id}`} style={{ height: 10 }}>
+              <Link to={`/${genre}/${item.id}`} style={{ height: 10 }}>
                 <div className="Pages_Title">{item.title}</div>
               </Link>
             </div>
