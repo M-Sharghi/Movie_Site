@@ -1,21 +1,42 @@
-import { Movie_name, Pic_flex, Image} from "./styles";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
-function TopRated(props){
-    return (
-            <div className="flex auto">
-            {props.list.map((item,page) => {
-                let img_url="https://www.themoviedb.org/t/p/w220_and_h330_face/";
-                let img_top_rated_movie=`${img_url}${item.poster_path}`;
-              return (
-                <Pic_flex key={item.id}>
-                    <Link to={`/movie/${item.id}`}><Image src={img_top_rated_movie}></Image></Link>
-                    <Link to={`/movie/${item.id}`}><Movie_name>{item.title}</Movie_name></Link>
-                </Pic_flex>   
-                );
-            })}
+function TopRated(props) {
+  return (
+    <div className="flex auto">
+      {props.list.map((item, page) => {
+        let img_url = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
+        let img_top_rated_movie = `${img_url}${item.poster_path}`;
+        return (
+          <div>
+            <div className="Pages_Picflex" key={item.id}>
+              <Link to={`/movie/${item.id}`}>
+                <img className="Pages_Image" src={img_top_rated_movie}></img>
+              </Link>
+              <div className="Pages_Chart">
+                <CircularProgressbar
+                  background={true}
+                  styles={{
+                    path: { stroke: "yellow" },
+                    trail: { stroke: "grey" },
+                    text: { fill: "white", fontSize: "24px" },
+                    background: { fill: "#232328" },
+                  }}
+                  value={Math.round(item.vote_average * 10)}
+                  text={`${Math.round(item.vote_average * 10)}%`}
+                />
+              </div>
             </div>
-    )
+            <br />
+            <Link to={`/movie/${item.id}`}>
+              <div className="Pages_Title">{item.title}</div>
+            </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default TopRated;

@@ -5,6 +5,8 @@ import { get_discover_movie, get_discover_tv } from "../helpers/server";
 import Pagination from "../components/Pagination";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 function People() {
   let { genre_id, genre, genre_name } = useParams();
@@ -16,48 +18,65 @@ function People() {
   useEffect(() => {
     setLoading(true);
     if (genre === "movie") {
-        get_discover_movie(page,genre_id).then((response) => {
-            setData(response.results);
-            setNumberOfPages(response.total_pages);
-            setLoading(false);
-        });
-        } else {
-        get_discover_tv(page,genre_id).then((response) => {
-            setData(response.results.map((item)=>{
-                return {
-                    ...item,
-                    title: item.name
-                }}));
-            setNumberOfPages(response.total_pages);
-            setLoading(false);
+      get_discover_movie(page, genre_id).then((response) => {
+        setData(response.results);
+        setNumberOfPages(response.total_pages);
+        setLoading(false);
+      });
+    } else {
+      get_discover_tv(page, genre_id).then((response) => {
+        setData(
+          response.results.map((item) => {
+            return {
+              ...item,
+              title: item.name,
+            };
+          })
+        );
+        setNumberOfPages(response.total_pages);
+        setLoading(false);
       });
     }
-  }, [page,genre]);
+  }, [page, genre]);
 
   return (
     <div>
-        <Nav />
-        <h1>{genre_name}</h1>
-        <div className="flex auto">
-            {data.map((item, index) => {
-            let img_url ="https://www.themoviedb.org/t/p/w220_and_h330_face/";
-            let img_movie = `${img_url}${item.poster_path}`;
-                return (
-                    <div key={index} style={{ width: 235 }}>
-                        <div>
-                            <Link to={`/movie/${item.id}`}>
-                                <img className="Image" src={img_movie} />
-                            </Link>
-                            <Link to={`/movie/${item.id}`} style={{ height: 10 }}>
-                                {item.title}
-                            </Link>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-        <Pagination setPage={setPage} pageNumber={numberOfPages} />
-        <Footer />
+      <Nav />
+      <h1>{genre_name}</h1>
+      <div className="flex auto">
+        {data.map((item, index) => {
+          let img_url = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
+          let img_movie = `${img_url}${item.poster_path}`;
+          return (
+            <div key={index} style={{ width: 235 }}>
+              <div className="Pages_Picflex">
+                <Link to={`/movie/${item.id}`}>
+                  <img className="Pages_Image" src={img_movie} />
+                </Link>
+                <div className="Pages_Chart">
+                  <CircularProgressbar
+                    background={true}
+                    styles={{
+                      path: { stroke: "yellow" },
+                      trail: { stroke: "grey" },
+                      text: { fill: "white", fontSize: "24px" },
+                      background: { fill: "#232328" },
+                    }}
+                    value={Math.round(item.vote_average * 10)}
+                    text={`${Math.round(item.vote_average * 10)}%`}
+                  />
+                </div>
+              </div>
+              <br />
+              <Link to={`/movie/${item.id}`} style={{ height: 10 }}>
+                <div className="Pages_Title">{item.title}</div>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+      <Pagination setPage={setPage} pageNumber={numberOfPages} />
+      <Footer />
     </div>
   );
 }

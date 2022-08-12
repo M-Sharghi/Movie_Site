@@ -15,7 +15,7 @@ let Text_flex = styled.div`
     padding-top:32px;
     text-align: left;
     width: 60%;
-    height: 1050px;
+    height: 900px;
 
 `;
 
@@ -23,6 +23,7 @@ let Image = styled.img`
     width: 300px;
     height: 450px;
     border-radius: 16px;
+    
 `;
 
 let Act_Container = styled.div`
@@ -51,4 +52,8 @@ let Table = styled.div`
     border-bottom: 1px solid #ccc;
 `;
 
+
+
 export { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table};
+
+

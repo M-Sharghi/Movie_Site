@@ -1,10 +1,7 @@
 import Nav from "../components/NavHome";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
-import { get_multi_search } from "../helpers/server";
 import { Link } from "react-router-dom";
-import Trailer from "../components/Trailer";
-
 
 
 function Home() {
@@ -39,7 +36,7 @@ function Home() {
           }}
         ></input><br />
         <div className="auto" style={{width:'700px', textAlign:"left", padding:"16px 32px", borderRadius:16}}>
-        {data.slice(0, 8).map((item)=>{
+        {props.list.slice(0, 8).map((item)=>{
           let img_url="https://www.themoviedb.org/t/p/w94_and_h141_bestv2";
           let img_people=`${img_url}${item.profile_path || item.poster_path}`;
           let woman_img="/icons/woman.jpg";
@@ -58,7 +55,6 @@ function Home() {
         })}
         </div>
       </div>
-      <Trailer />
       <Footer />
     </div>
   );

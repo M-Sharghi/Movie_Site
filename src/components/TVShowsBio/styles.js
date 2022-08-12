@@ -15,7 +15,7 @@ let Text_flex = styled.div`
     padding-top:32px;
     text-align: left;
     width: 60%;
-    height: 1000px;
+    height: 820px;
 
 `;
 

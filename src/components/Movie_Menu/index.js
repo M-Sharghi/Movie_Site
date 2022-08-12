@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
  
 
 export default function App() {
