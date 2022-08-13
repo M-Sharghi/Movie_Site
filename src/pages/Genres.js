@@ -57,7 +57,7 @@ function People() {
                   <CircularProgressbar
                     background={true}
                     styles={{
-                      path: { stroke: "yellow" },
+                      path: { stroke: "#cbd842" },
                       trail: { stroke: "grey" },
                       text: { fill: "white", fontSize: "24px" },
                       background: { fill: "#232328" },

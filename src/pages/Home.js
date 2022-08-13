@@ -1,4 +1,4 @@
-import Nav from "../components/NavHome";
+import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { get_multi_search } from "../helpers/server";

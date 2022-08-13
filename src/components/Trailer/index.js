@@ -37,7 +37,11 @@ function App() {
         </button>
       </div>
 
-      <ReactPlayer url={videoURL} controls={true} style={{borderRadius:"24px"}}/>
+      <ReactPlayer
+        url={videoURL}
+        controls={true}
+        style={{ borderRadius: "24px" }}
+      />
     </div>
   );
 }

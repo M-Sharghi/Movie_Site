@@ -32,7 +32,7 @@ function TVShowsBio(props) {
         <span style={{ width: 80 }}>
           <CircularProgressbar
             styles={{
-              path: { stroke: "yellow" },
+              path: { stroke: "#cbd842" },
               trail: { stroke: "grey" },
               text: { fill: "white", fontSize: "24px" },
             }}
