@@ -9,7 +9,7 @@ function Nav(){
     return(
         <Nav_Container className="flex navpadding">
             <NavLinks className="flex">
-                <Link to="/"><img src="/icons/JMDB-logos_yellow.png" alt="logo" width="200px"/></Link>
+                <Link to="/"><img src="/icons/JMDB-logos_multi.png" alt="logo" width="200px"/></Link>
                 <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home</Link>
                 <Link to=""><Movie_Menu /></Link>
                 <Link to=""><TVShows_Menu /></Link>
