@@ -47,7 +47,8 @@ function Category() {
           style={{
             width: 300,
             backgroundImage:
-              "linear-gradient(90deg,#9a6dfb -7.22%,#5dc7fc 109.17%)",
+              "linear-gradient(90deg,#6B8E23 -7.22%,#A52A2A 109.17%)",
+            // "linear-gradient(90deg,#9a6dfb -7.22%,#5dc7fc 109.17%)",
             margin: "auto",
             padding: 16,
             borderRadius: 32,
