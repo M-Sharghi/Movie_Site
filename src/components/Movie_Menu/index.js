@@ -17,7 +17,7 @@ export default function App() {
   };
   return (
     <div>
-      <Link to="" onClick={handleClick} style={{fontSize:"20px", fontWeight: "bold"}}>Movie</Link>
+      <Link to="" onClick={handleClick} className="links">Movie</Link>
       <Menu
         anchorEl={anchorEl}
         keepMounted

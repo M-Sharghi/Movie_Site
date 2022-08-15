@@ -17,7 +17,7 @@ export default function App() {
   };
   return (
     <div>
-      <Link to="" onClick={handleClick} style={{fontSize:"20px", fontWeight: "bold"}}>TV Shows
+      <Link to="" onClick={handleClick} className="links">TV Shows
       </Link>
       <Menu
         anchorEl={anchorEl}

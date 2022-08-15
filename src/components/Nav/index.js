@@ -10,11 +10,12 @@ function Nav(){
         <Nav_Container className="flex navpadding">
             <NavLinks className="flex">
                 <Link to="/"><img src="/icons/JMDB-logos_multi.png" alt="logo" width="200px"/></Link>
-                <Link to="/" style={{fontSize:"20px", fontWeight: "bold"}}>Home</Link>
+                <Link className="links" to="/">Home</Link>
                 <Link to=""><Movie_Menu /></Link>
-                <Link to=""><TVShows_Menu /></Link>
-                <Link to="/people" style={{fontSize:"20px", fontWeight: "bold"}}>People</Link>
-                <Link to="/categories" style={{fontSize:"20px", fontWeight: "bold"}}>Categories</Link>
+                <Link className="links" to=""><TVShows_Menu /></Link>
+                <Link className="links" to="/people">People</Link>
+                <Link className="links" to="/categories">Categories</Link>
+                <Link className="links" to="/trailer">Trailer</Link>
             </NavLinks>
 
             <NavActions className="flex">

@@ -19,7 +19,6 @@ function Movie_Bio(){
         // setLoading(true);
         get_movie_bio(id).then((response) => {
             setBio(response);
-
         });
 
         get_movie_credits(id).then((response) => {

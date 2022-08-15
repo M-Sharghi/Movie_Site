@@ -1,12 +1,5 @@
-import {
-  Pic_flex,
-  Text_flex,
-  Image,
-  Act_Container,
-  First_Col,
-  Cols,
-  Table,
-} from "./styles";
+import {Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table} 
+from "./styles";
 import { Link } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";

@@ -8,6 +8,7 @@ function App() {
   const [video, setVideo] = useState("inception");
   const [videoURL, setVideoURL] = useState("https://youtu.be/sa9l-dTv9Gk");
 
+
   //A function to fetch the required URL
   // and storing it inside the
   // videoURL state variable
@@ -40,7 +41,7 @@ function App() {
       <ReactPlayer
         url={videoURL}
         controls={true}
-        style={{ borderRadius: "24px" }}
+        // playing={true}
       />
     </div>
   );

@@ -202,3 +202,21 @@ export async function get_popular_movie(page) {
     let data = body;
     return data;
   }
+
+  export async function get_movie_search(input) {
+    let movie_search=`${base_url}/search/movie?api_key=${api_key}&&query=${input}`;
+    let response = await fetch(movie_search);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
+
+  export async function get_movie_trailer(id) {
+    let movie_trailer=`${base_url}/movie/${id}/videos?api_key=${api_key}`;
+    let response = await fetch(movie_trailer);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+

@@ -42,23 +42,9 @@ function Category() {
   let tv_css = selected === "tv" ? "btn_show" : "";
   let choice = filter_choice.map((item) => {
     return (
-      <div style={{ margin: 12 }}>
-        <div
-          style={{
-            width: 300,
-            backgroundImage:
-              "linear-gradient(90deg,#6B8E23 -7.22%,#A52A2A 109.17%)",
-            // "linear-gradient(90deg,#9a6dfb -7.22%,#5dc7fc 109.17%)",
-            margin: "auto",
-            padding: 16,
-            borderRadius: 32,
-          }}
-        >
-          <Link to={`/genres/${selected}/${item.name}/${item.id}`}>
-            {item.name}
-          </Link>
+        <div className="category_genres">
+          <Link to={`/genres/${selected}/${item.name}/${item.id}`}>{item.name}</Link>
         </div>
-      </div>
     );
   });
 
@@ -66,22 +52,8 @@ function Category() {
     <div>
       <Nav />
       <div>
-        <button
-          className="auto flex"
-          style={{
-            width: 450,
-            backgroundColor: "#232328",
-            border: "none",
-            borderRadius: "24px",
-            padding: "0px 32px",
-            fontWeight: "bold",
-            marginTop: "48px",
-            marginBottom: "24px",
-            fontSize: 24,
-          }}
-        >
-          <a
-            className={movie_css}
+        <button className="auto flex category_filter">
+          <a className={movie_css}
             style={{ cursor: "pointer" }}
             onClick={() => {
               setSelected("movie");
@@ -100,9 +72,7 @@ function Category() {
           </a>
         </button>
         <hr />
-        <div style={{ marginTop: "32px" }}></div>
-        <div className="auto flex">{choice}</div>
-        <div style={{ marginBottom: "32px" }}></div>
+        <div className="auto flex margin">{choice}</div>
       </div>
       <Footer />
     </div>

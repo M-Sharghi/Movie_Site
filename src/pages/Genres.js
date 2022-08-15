@@ -48,7 +48,7 @@ function People() {
           let img_url = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
           let img_movie = `${img_url}${item.poster_path}`;
           return (
-            <div key={index} style={{ width: 235 }}>
+            <div key={index}>
               <div className="Pages_Picflex">
                 <Link to={`/${genre}/${item.id}`}>
                   <img className="Pages_Image" src={img_movie} />
@@ -68,7 +68,7 @@ function People() {
                 </div>
               </div>
               <br />
-              <Link to={`/${genre}/${item.id}`} style={{ height: 10 }}>
+              <Link to={`/${genre}/${item.id}`}>
                 <div className="Pages_Title">{item.title}</div>
               </Link>
             </div>

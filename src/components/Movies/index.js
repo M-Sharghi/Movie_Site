@@ -10,11 +10,7 @@ function Movies(props) {
         let img_popular_movie = `${img_url}${item.poster_path}`;
         return (
           <div>
-            <div
-              className="Pages_Picflex"
-              key={item.id}
-              style={{ position: "relative" }}
-            >
+            <div className="Pages_Picflex" key={item.id}>
               <Link to={`/movie/${item.id}`}>
                 <img className="Pages_Image" src={img_popular_movie}></img>
               </Link>
