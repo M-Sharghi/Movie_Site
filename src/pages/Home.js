@@ -23,7 +23,7 @@ function Home() {
     <div>
       <Nav />
       <div className="home">
-        <div>
+        <div className="home_absolute">
           <h1 className="auto welcome">
             Welcome. Millions of movies, TV shows and people to discover.
           </h1>
@@ -38,7 +38,7 @@ function Home() {
             ></input>
             <br />
             <div className="auto home_search">
-              {data.slice(0, 8).map((item) => {
+              {data.slice(0, 5).map((item) => {
                 let img_url =
                   "https://www.themoviedb.org/t/p/w94_and_h141_bestv2";
                 let img_people = `${img_url}${
@@ -97,7 +97,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="trailer_bgcolor">
         <Trailers />
       </div>
       <Footer />

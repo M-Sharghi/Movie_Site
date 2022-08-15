@@ -15,12 +15,19 @@ body{
 }
 
 .home {
-  /* position: relative; */
+  position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./icons/movie_img.jpg") center;
   background-size: cover;
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+.home_absolute{
+  position: absolute;
+  left: 50%;
+  top: 25%; 
+  transform: translate(-50% , -50%);
 }
 
 a {
@@ -43,7 +50,7 @@ a {
 }
 
 .welcome {
-  font-size: 64px;
+  font-size: 48px;
   padding: 128px 8px 80px 8px;
 }
 
@@ -172,3 +179,10 @@ a {
     margin-top: 32px;
     margin-bottom: 32px;
   }
+
+  .trailer_bgcolor{
+    background-image: radial-gradient(50vw 500px at center -200px,#7633ff 0,transparent 90%);
+    /* background: linear-gradient(90deg,#000000 20%,transparent 60.27%); */
+    /* background-image: radial-gradient(circle 375px at 28% 145%,#7633ff,transparent 90%); */
+  }
+  

@@ -4,11 +4,9 @@ import { get_movie_trailer, get_movie_search } from "../../helpers/server";
 
 async function search_trailer(input) {
   const response = await get_movie_search(input);
-  const ids = response.results
-    .map((item) => {
+  const ids = response.results.map((item) => {
       return item.id;
-    })
-    .slice(0, 1);
+    }).slice(0, 1);
   const trailers_promises = ids.map((id) => {
     return get_movie_trailer(id);
   });
@@ -19,7 +17,6 @@ async function search_trailer(input) {
       output.push(item.key);
     });
   });
-
   return output.slice(0, 1);
 }
 
@@ -30,13 +27,13 @@ function App() {
   function handleSearch() {
     search_trailer(input).then((keys) => {
       setList(keys);
-    });
-  }
+    })
+  } 
 
   return (
-    <div className="trailer">
+    <div className="trailer auto">
       <div className="search-box">
-        <h3> Any Movies Trailer: </h3>
+        <h2> Search your movie trailer</h2>
         <input
           type="text"
           onChange={(e) => {
@@ -57,9 +54,10 @@ function App() {
             <ReactPlayer
               url={`https://youtu.be/${key}`}
               controls={true}
-              // playing={true}
+              light="/icons/h_p.jpg"
+              playing={true}
             />
-          );
+          ); 
         }
       )}
     </div>

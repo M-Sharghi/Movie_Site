@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 
 let People_name = styled.div`
-  width: 220px;
+  width: 230px;
   padding:10px 12px;
-  padding-right: 32px;
   font-size: large;
-  text-align: center;
+  text-align: left;
+  height: 32px;
 `;
 
 
@@ -17,8 +17,9 @@ let Pic_flex = styled.div`
 `;
 
 let Image = styled.img`
-    width: 237px;
-    height: 237px;
+  width: 235px;
+  height: 280px;
+  border-radius: 12px;
 `;
 
 

@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 function Peoples(props){
     return (
         <div>
-            {/* <h1>Popular People</h1> */}
             <div className="flex auto">
             {props.list.map((item) => {
                 let img_url="https://www.themoviedb.org/t/p/w235_and_h235_face/";
