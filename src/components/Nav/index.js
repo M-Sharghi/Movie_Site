@@ -4,8 +4,9 @@ import Movie_Menu from "../Movie_Menu";
 import TVShows_Menu from "../TVShows_Menu";
 
 
-
-function Nav(){               
+function Nav(){  
+    
+    
     return(
         <Nav_Container className="flex navpadding">
             <NavLinks className="flex">
@@ -15,11 +16,10 @@ function Nav(){
                 <Link className="links" to=""><TVShows_Menu /></Link>
                 <Link className="links" to="/people">People</Link>
                 <Link className="links" to="/categories">Categories</Link>
-                <Link className="links" to="/trailer">Trailer</Link>
             </NavLinks>
 
             <NavActions className="flex">
-                {/* <Link to="/search"><img src="/icons/search.svg" alt="search"/></Link> */}
+                {/* <a style={{cursor:"pointer"}}><img src="/icons/search.svg" alt="search"/></a> */}
                 {/* <button>Login</button> */}
             </NavActions>
         </Nav_Container>

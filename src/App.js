@@ -17,16 +17,17 @@ import TVShowsBioPage from "./pages/TV_Shows_Bio";
 import TermsOfServicePage from "./pages/Terms_Of_Service";
 import GenresPage from "./pages/Genres";
 import CookieConsent from "react-cookie-consent";
-import TrailerPage from "./pages/Trailer"
+
 
 function App() {
-  const [cookies, setCookie] = useCookies(["user"]);
+  
+  // const [cookies, setCookie] = useCookies(["user"]);
 
-  function handleCookie() {
-    setCookie("user", "gowtham", {
-      path: "/"
-    });
-  }
+  // function handleCookie() {
+  //   setCookie("user", "gowtham", {
+  //     path: "/"
+  //   });
+  // }
 
   return (
     <div className="App">
@@ -42,9 +43,6 @@ function App() {
           <Route path="/tv/on-the-air" element={<OnTheAirTVPage />} />
           <Route path="/tv/top_rated" element={<TopRatedTVPage />} />
           <Route path="/categories" element={<CategoryPage />} />
-
-          <Route path="/trailer" element={<TrailerPage />} />
-
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/people/:id" element={<PersonBioPage />} />
           <Route path="/movie/:id" element={<MovieBioPage />} />

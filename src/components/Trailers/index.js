@@ -1,31 +1,46 @@
 import { useState } from "react";
 import ReactPlayer from "react-player";
-import movieTrailer from "movie-trailer";
+import { get_movie_trailer, get_movie_search } from "../../helpers/server";
+
+async function search_trailer(input) {
+  const response = await get_movie_search(input);
+  const ids = response.results
+    .map((item) => {
+      return item.id;
+    })
+    .slice(0, 1);
+  const trailers_promises = ids.map((id) => {
+    return get_movie_trailer(id);
+  });
+  const trailers = await Promise.all(trailers_promises);
+  const output = [];
+  trailers.forEach((movie) => {
+    movie.results.forEach((item) => {
+      output.push(item.key);
+    });
+  });
+
+  return output.slice(0, 1);
+}
 
 function App() {
-  //Setting up the initial states using
-  // react hook 'useState"
-  const [video, setVideo] = useState("inception");
-  const [videoURL, setVideoURL] = useState("https://youtu.be/sa9l-dTv9Gk");
+  const [input, setInput] = useState("inception");
+  const [list, setList] = useState([]);
 
-
-  //A function to fetch the required URL
-  // and storing it inside the
-  // videoURL state variable
   function handleSearch() {
-    movieTrailer(video).then((res) => {
-      setVideoURL(res);
+    search_trailer(input).then((keys) => {
+      setList(keys);
     });
   }
 
   return (
     <div className="trailer">
       <div className="search-box">
-        <h3> any movies / shows Trailer: </h3>
+        <h3> Any Movies Trailer: </h3>
         <input
           type="text"
           onChange={(e) => {
-            setVideo(e.target.value);
+            setInput(e.target.value);
           }}
         />
 
@@ -37,12 +52,16 @@ function App() {
           Search
         </button>
       </div>
-
-      <ReactPlayer
-        url={videoURL}
-        controls={true}
-        // playing={true}
-      />
+      {list.map((key) => {
+          return (
+            <ReactPlayer
+              url={`https://youtu.be/${key}`}
+              controls={true}
+              // playing={true}
+            />
+          );
+        }
+      )}
     </div>
   );
 }
