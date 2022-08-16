@@ -1,10 +1,15 @@
-import {Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table} 
-from "./styles";
+import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table } from "./styles";
 import { Link } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import ListSubheader from "@mui/material/ListSubheader";
+
 function MovieBio(props) {
+  let genres = props.list.genres;
   let img_profile = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
   let img_movie = `${img_profile}${props.list.poster_path}`;
   return (
@@ -13,12 +18,6 @@ function MovieBio(props) {
         <span>
           <Image src={img_movie}></Image>
         </span>
-        <h2>Movie Info</h2>
-        <h4>Release Date : {props.list.release_date}</h4>
-        <h4>Original Language : {props.list.original_language}</h4>
-        <h4>Status : {props.list.status}</h4>
-        <h4>Budget : {props.list.budget}</h4>
-        <h4>Revenue : {props.list.revenue}</h4>
       </Pic_flex>
       <Text_flex>
         <h1>{props.list.title}</h1>
@@ -33,14 +32,40 @@ function MovieBio(props) {
             text={`${Math.round(props.list.vote_average * 10)}%`}
           />
         </span>
-        <h4>
+        <h4 style={{ color: "#A52A2A" }}>
           <i>{props.list.tagline}</i>
         </h4>
-        <h3>overview</h3>
-        <p>{props.list.overview}</p>
+        <div>
+          <h5>Release Date : {props.list.release_date}</h5>
+          <h5>Original Language : {props.list.original_language}</h5>
+          <h5>Status : {props.list.status}</h5>
+          <h5>Budget : {props.list.budget}</h5>
+          <h5>Revenue : {props.list.revenue}</h5>
+          {/* <h5>Genres: {genres.map((item)=>{
+              return ( <span>{item.name} </span>);
+              })}
+            </h5> */}
+        </div>
       </Text_flex>
-      <h1>Top Billed Cast</h1>
-      <div className="auto">
+      <div style={{ textAlign: "left" }}>
+        <h2>
+          <i>overview</i>
+        </h2>
+        <p>{props.list.overview}</p>
+      </div>
+      <ImageList
+        sx={{
+          width: "100%",
+          height: 350,
+          marginTop: "64px",
+          marginBottom: "64px",
+        }}
+      >
+        <ImageListItem key="Subheader" cols={10}>
+          <ListSubheader component="div">
+            <h1 style={{ textAlign: "left" }}>Top Billed Cast</h1>
+          </ListSubheader>
+        </ImageListItem>
         {props.act.map((item) => {
           let images = "https://www.themoviedb.org/t/p/w138_and_h175_face/";
           let images_people = `${images}${item.profile_path}`;
@@ -55,17 +80,28 @@ function MovieBio(props) {
               ? `${images_people}`
               : `${gender_img}`; /* check if img is null*/
           return (
-            <span key={item.id}>
-                <Link to={`/people/${item.id}`}>
-                  <img
-                    src={img_is_null}
-                    style={{ width: "138px", height: "175px" }}
-                  />
-                </Link>
-            </span>
+            <ImageListItem
+              key={item.id}
+              component={Link}
+              to={`/people/${item.id}`}
+            >
+              <img
+                src={`${img_is_null}?w=248&fit=crop&auto=format`}
+                srcSet={`${img_is_null}?w=248&fit=crop&auto=format&dpr=4 2x`}
+                alt={item.name}
+                loading="lazy"
+                style={{ width: 138, height: 175 }}
+              />
+              <ImageListItemBar
+                title={item.name}
+                subtitle={<span>Character: {item.character}</span>}
+                position="below"
+                sx={{ width: 138, height: 175 }}
+              />
+            </ImageListItem>
           );
         })}
-      </div>
+      </ImageList>
       <h1>Crew Details</h1>
       <Act_Container>
         <Table className="flex">
