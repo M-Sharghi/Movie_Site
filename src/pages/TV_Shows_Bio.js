@@ -6,6 +6,14 @@ import { get_tv_shows_bio, get_tv_shows_credits, get_movie_recommendations} from
 import TVShowsBio from "../components/TVShowsBio";
 
 
+async function get_tv(id){
+    let tv_bio = get_tv_shows_bio(id);
+    let tv_credit = get_tv_shows_credits(id);
+    let tv_recommendation = get_movie_recommendations(id);
+    let output = await Promise.all([ tv_bio, tv_credit, tv_recommendation ]);
+    return output;
+}
+
 function TV_Shows_Bio(){
     let { id } = useParams();
     let [bio, setBio]=useState({});
@@ -13,33 +21,35 @@ function TV_Shows_Bio(){
     let [acting, setActing]=useState([]);
     let [production, setProduction]=useState([]);
     let [recommendations, setRecommendations]=useState([]);
-    let [loading,setLoading]=useState(false);
+    let [loading,setLoading]=useState(true);
+    let [error,setError]=useState(false);
+
   
     
     useEffect(() => {
-        // setLoading(true);
-        get_tv_shows_bio(id).then((response) => {
-            setBio(response);
-            setSeasons(response.seasons)
+        setLoading(true);
+        get_tv(id).then((results) =>{
+            let bio = results[0];
+            let credit = results[1];
+            let recommendation = results[2];
+            setBio(bio);
+            setSeasons(bio.seasons)
+            setActing(credit.cast);
+            setProduction(credit.crew);
+            setRecommendations(recommendation.results);
+        }).catch((e) => {
+            setError(true)
+          }).finally(() =>{
+            setLoading(false);
+          });
 
-        });
-
-        get_tv_shows_credits(id).then((response) => {
-            setActing(response.cast);
-            setProduction(response.crew);
-        });
-
-        get_movie_recommendations(id).then((response) => {
-            setRecommendations(response.results);
-            // setLoading(false);
-        });
     }, []);
 
 
     return (
         <div>
             <Nav />
-            <TVShowsBio list={bio} season={seasons} act={acting} crew={production} recommendation={recommendations}/>
+            { !loading && <TVShowsBio list={bio} season={seasons} act={acting} crew={production} recommendation={recommendations}/>}
             <Footer />
         </div>
     )

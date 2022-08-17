@@ -11,13 +11,18 @@ function Top_Rated_Movie(){
     let [data, setData] = useState([]);
     let [page, setPage]=useState();
     let [numberOfPages, setNumberOfPages]=useState();
-    let [loading,setLoading]=useState(false);
+    let [loading,setLoading]=useState(true);
+    let [error,setError]=useState(false);
+
 
     useEffect(() => {
         setLoading(true);
         get_top_rated_movie(page).then((response) => {
         setData(response.results);
         setNumberOfPages(response.total_pages);
+      }).catch((e) => {
+        setError(true)
+      }).finally(() =>{
         setLoading(false);
       });
     }, [page]);

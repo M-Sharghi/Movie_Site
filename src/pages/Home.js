@@ -8,12 +8,19 @@ import Trailers from "../components/Trailers";
 function Home() {
   let [data, setData] = useState([]);
   let [input, setInput] = useState("");
+  let [loading,setLoading]=useState(true);
+    let [error,setError]=useState(false);
 
   useEffect(() => {
+    setLoading(true);
     if (input !== "") {
       get_multi_search(input).then((response) => {
         setData(response.results);
-      });
+      }).catch((e) => {
+        setError(true)
+      }).finally(() =>{
+        setLoading(false);
+      })
     } else {
       setData([]);
     }

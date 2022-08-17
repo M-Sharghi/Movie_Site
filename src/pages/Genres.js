@@ -13,7 +13,9 @@ function People() {
   let [data, setData] = useState([]);
   let [page, setPage] = useState();
   let [numberOfPages, setNumberOfPages] = useState();
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(true);
+  let [error,setError]=useState(false);
+
 
   useEffect(() => {
     setLoading(true);
@@ -21,6 +23,9 @@ function People() {
       get_discover_movie(page, genre_id).then((response) => {
         setData(response.results);
         setNumberOfPages(response.total_pages);
+      }).catch((e) => {
+        setError(true)
+      }).finally(() =>{
         setLoading(false);
       });
     } else {
@@ -34,9 +39,13 @@ function People() {
           })
         );
         setNumberOfPages(response.total_pages);
+      }).catch((e) => {
+        setError(true)
+      }).finally(() =>{
         setLoading(false);
       });
     }
+    
   }, [page, genre]);
 
   return (

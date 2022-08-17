@@ -6,44 +6,51 @@ import {get_people, get_person_bio, get_person_images, get_person_credits} from 
 import PersonBio from "../components/PersonBio";
 
 
+async function get_person(id){
+    let person = get_people();
+    let person_bio = get_person_bio(id);
+    let person_image = get_person_images(id);
+    let person_credit = get_person_credits(id);
+    let output = await Promise.all([ person, person_bio, person_image, person_credit ]);
+    return output;
+}
+
 function Person_Bio(){
     let { id } = useParams();
     let [data, setData] = useState([]);
-    let [page, setPage]=useState();
     let [bio, setBio]=useState({});
     let [images, setImages]=useState([]);
     let [acting, setActing]=useState([]);
     let [production, setProduction]=useState([]);
-    let [loading,setLoading]=useState(false);
+    let [loading,setLoading]=useState(true);
+    let [error,setError]=useState(false);
+
   
-    console.log(acting);
-
     useEffect(() => {
-        // setLoading(true);
-        get_people().then((response) => {
-            setData(response.results);
-            // setLoading(false);
-        });
-      
-        get_person_bio(id).then((response) => {
-            setBio(response);
-        });
+        setLoading(true);
+        get_person(id).then((results) =>{
+            let person = results[0];
+            let bio = results[1];
+            let image = results[2];
+            let credit = results[3];
+            setData(person.results);
+            setBio(bio);
+            setImages(image.profiles)
+            setActing(credit.cast);
+            setProduction(credit.crew);
+        }).catch((e) => {
+            setError(true)
+          }).finally(() =>{
+            setLoading(false);
+          });
 
-        get_person_images(id).then((response) => {
-            setImages(response.profiles);
-        });
-
-        get_person_credits(id).then((response) => {
-            setActing(response.cast);
-            setProduction(response.crew);
-        });
     }, []);
 
 
     return (
         <div>
             <Nav />
-            <PersonBio data={data} list={bio} image={images} act={acting} crew={production}/>
+            { !loading && <PersonBio data={data} list={bio} image={images} act={acting} crew={production}/>}
             <Footer />
         </div>
     )

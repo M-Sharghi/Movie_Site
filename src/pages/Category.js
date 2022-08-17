@@ -21,19 +21,27 @@ function Category() {
   let [selected, setSelected] = useState("movie");
   let [movie, setMovie] = useState([]);
   let [tv, setTV] = useState([]);
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(true);
+  let [error,setError]=useState(false);
 
   useEffect(() => {
     setLoading(true);
     get_movie_genre().then((response) => {
       setMovie(response.genres);
-      setLoading(false);
+    }).catch((e) =>{
+      setError(true)
+    }).finally(() =>{
+      setLoading(false)
     });
 
     get_tv_shows_genre().then((response) => {
       setTV(response.genres);
-      setLoading(false);
+    }).catch((e) =>{
+      setError(true)
+    }).finally(() =>{
+      setLoading(false)
     });
+
   }, []);
 
   let filter_choice =

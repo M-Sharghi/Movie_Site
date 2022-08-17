@@ -11,7 +11,8 @@ function Now_Playing_Movie(){
     let [data, setData] = useState([]);
     let [page, setPage]=useState();
     let [numberOfPages, setNumberOfPages]=useState();
-    let [loading,setLoading]=useState(false);
+    let [loading,setLoading]=useState(true);
+    let [error,setError]=useState(false);
 
 
     useEffect(() => {
@@ -19,6 +20,9 @@ function Now_Playing_Movie(){
         get_now_playing_movie(page).then((response) => {
         setData(response.results);
         setNumberOfPages(response.total_pages);
+      }).catch((e) => {
+        setError(true)
+      }).finally(() =>{
         setLoading(false);
       });
     }, [page]);

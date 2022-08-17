@@ -1,18 +1,22 @@
-import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1 } from "./styles";
+import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1} from "./styles";
 import { Link } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
+import numbro from "numbro";
+
 
 function MovieBio(props) {
   let genres = props.list.genres;
   let img_profile = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
   let img_movie = `${img_profile}${props.list.poster_path}`;
-  let overview = props.list.overview !== "" ? props.list.overview : "There isn't any overview !" ;
+  let overview =
+    props.list.overview !== ""
+      ? props.list.overview
+      : "There isn't any overview !";
   return (
     <div className="flex auto">
       <Pic_flex key={props.list.id}>
@@ -40,15 +44,17 @@ function MovieBio(props) {
           <h5>Release Date : {props.list.release_date}</h5>
           <h5>Original Language : {props.list.original_language}</h5>
           <h5>Status : {props.list.status}</h5>
-          <h5>Budget : {props.list.budget}</h5>
-          <h5>Revenue : {props.list.revenue}</h5>
-          {/* <h5>Genres: {genres.map((item)=>{
-              return ( <span>{item.name} </span>);
-              })}
-            </h5> */}
+          <h5>Budget : {numbro(props.list.budget).formatCurrency({thousandSeparated: true, mantissa: 2})}</h5>
+          <h5>Revenue : {numbro(props.list.revenue).formatCurrency({thousandSeparated: true, mantissa: 2})}</h5>
+          <h5>
+            Genres:{" "}
+            {genres.map((item) => {
+              return <span>{item.name} </span>;
+            })}
+          </h5>
         </div>
       </Text_flex>
-      <div style={{ textAlign: "left", width:"100%" }}>
+      <div style={{ textAlign: "left", width: "100%" }}>
         <H1>
           <i>overview</i>
         </H1>
@@ -60,7 +66,7 @@ function MovieBio(props) {
           height: 350,
           marginTop: "64px",
           marginBottom: "64px",
-          border:"1px solid white"
+          border: "1px solid white",
         }}
       >
         <ImageListItem key="Subheader" cols={10}>

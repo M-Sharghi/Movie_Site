@@ -39,10 +39,10 @@ function TVShowsBio(props) {
           <h5>Status : {props.list.status}</h5>
           <h5>Type : {props.list.type}</h5>
           <h5>Original Language : {props.list.original_language}</h5>
-          {/* <h5>Genres: {genres.map((item)=>{
+          <h5>Genres: {genres.map((item)=>{
               return ( <span>{item.name} </span>);
               })}
-            </h5> */}
+          </h5>
         </div>
       </Text_flex>
       <div style={{ textAlign: "left", width:"100%" }}>
