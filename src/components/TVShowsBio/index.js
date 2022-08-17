@@ -1,4 +1,4 @@
-import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table } from "./styles";
+import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1 } from "./styles";
 import { Link } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -11,6 +11,7 @@ function TVShowsBio(props) {
   let genres = props.list.genres;
   let img_profile = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
   let img_movie = `${img_profile}${props.list.poster_path}`;
+  let overview = props.list.overview !== "" ? props.list.overview : "There isn't any overview !" ;
   return (
     <div className="flex auto">
       <Pic_flex key={props.list.id}>
@@ -44,11 +45,11 @@ function TVShowsBio(props) {
             </h5> */}
         </div>
       </Text_flex>
-      <div style={{ textAlign: "left" }}>
-        <h2>
+      <div style={{ textAlign: "left", width:"100%" }}>
+        <H1>
           <i>overview</i>
-        </h2>
-        <p>{props.list.overview}</p>
+        </H1>
+        <p>{overview}</p>
       </div>
       <ImageList
         sx={{
@@ -97,7 +98,7 @@ function TVShowsBio(props) {
           );
         })}
       </ImageList>
-      <h1>Crew Details</h1>
+      <H1>Crew Details</H1>
       <Act_Container>
         <Table className="flex">
           <First_Col>

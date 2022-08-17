@@ -1,6 +1,7 @@
-import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table } from "./styles";
+import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1 } from "./styles";
 
 function PersonBio(props) {
+  let biography = props.list.biography !== "" ? props.list.biography : "There isn't any biography !" ;
   let img_profile = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
   let img_people = `${img_profile}${props.list.profile_path}`;
   let gender =
@@ -34,13 +35,13 @@ function PersonBio(props) {
         <h4>Birthday : {props.list.birthday}</h4>
         <h4>Place of Birth : {props.list.place_of_birth}</h4>
       </Text_flex>
-      <div style={{ textAlign: "left" }}>
-        <h2>
+      <div style={{ textAlign: "left", width:"100%" }}>
+        <H1>
           <i>Biography</i>
-        </h2>
-        <p>{props.list.biography}</p>
+        </H1>
+        <p>{biography}</p>
       </div>
-      <h1>Acting Information</h1>
+      <H1>Acting Information</H1>
       <Act_Container>
         <Table className="flex">
           <First_Col>
@@ -66,7 +67,7 @@ function PersonBio(props) {
           );
         })}
       </Act_Container>
-      <h1>Other Activity</h1>
+      <H1>Other Activity</H1>
       <Act_Container>
         <Table className="flex">
           <First_Col>
@@ -90,7 +91,7 @@ function PersonBio(props) {
         })}
       </Act_Container>
       <div>
-        <h1 className="flex">Images</h1>
+        <H1 className="flex">Images</H1>
         <div>
           {props.image.map((item) => {
             let images = "https://www.themoviedb.org/t/p/w220_and_h330_face/";

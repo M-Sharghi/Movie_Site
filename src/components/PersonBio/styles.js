@@ -22,7 +22,6 @@ let Image = styled.img`
 `;
 
 let Act_Container = styled.div`
-    background-color: #fff;
     color: #696969;
     width: 100%;
     padding: 24px 64px;
@@ -31,6 +30,7 @@ let Act_Container = styled.div`
 let First_Col = styled.span`
     padding-top: 8px;
     padding-bottom: 8px;
+    padding-left: 4px;
     text-align: left;
     width:25%;
 `;
@@ -46,4 +46,8 @@ let Table = styled.div`
     border-bottom: 1px solid #ccc;
 `;
 
-export { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table };
+let H1 = styled.h1`
+    padding-top: 32px;
+`;
+
+export { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table , H1 };
