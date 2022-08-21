@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {Nav_Container, NavLinks, NavActions} from "./styles"
 import Movie_Menu from "../Movie_Menu";
 import TVShows_Menu from "../TVShows_Menu";
+import { FaBars } from 'react-icons/fa';
 
 
 function Nav(){  
@@ -25,7 +26,10 @@ function Nav(){
         </Nav_Container>
     )} else if (window.innerWidth <=480){
         return (
-            <div>Hello</div>
+            <div className="flex navpadding_mobile">
+                <Link to="/"><img src="/icons/JMDB-logos_multi.png" alt="logo" width="80px"/></Link>
+                <FaBars />
+            </div>
         )
     }
 }
