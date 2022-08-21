@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useCookies } from "react-cookie";
 import HomePage from "./pages/Home";
 import MoviePage from "./pages/Movie";
 import NowPlayingMoviePage from "./pages/Now_Playing_Movie";
@@ -21,14 +20,6 @@ import CookieConsent from "react-cookie-consent";
 
 function App() {
   
-  // const [cookies, setCookie] = useCookies(["user"]);
-
-  // function handleCookie() {
-  //   setCookie("user", "gowtham", {
-  //     path: "/"
-  //   });
-  // }
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -51,15 +42,11 @@ function App() {
           <Route path="/genres/:genre/:genre_name/:genre_id" element={<GenresPage />}/>
         </Routes>
       </BrowserRouter>
-      {/* <h1>React cookies</h1>
-      {cookies.user && <p>{cookies.user}</p>}
-      <button onClick={handleCookie}>Set Cookie</button> */}
       <CookieConsent 
       debug={true} 
       location="bottom" 
       style={{background:"black",textAlign:"left"}}
       buttonStyle={{color:"#000", background:"#cbd842",fontSize:"16px", borderRadius:"4px"}}
-      // expires={365}
       >
         This site uses cookie. See our{" "}
         <a href="/Terms_Of_Service" style={{ color: "#cbd842" }}>
