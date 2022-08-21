@@ -195,55 +195,36 @@ a {
       padding: 12px;
       border: none;
       font-size: 12px
-    }
+      }
     
     .home_search{
       width: 250px;
       text-align: left;
       padding: 12px 24px;
       border-radius: 12px;
-    }
+      }
     
     .home_search_input{
       display: flex;
       align-items: center;
       font-size: 12px;
 
-    }
+      }
     
     .home_search_img{
       width: 32px;
       height: 32px;
       margin: 2px 16px;
       border-radius: 2px;
-    }
+      }
 
     .welcome {
       font-size: 22px;
       padding: 64px 8px 40px 8px;
-    }
+      }
 
     .trailer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 60vh;
-      width: 70%;
       font-size: 12px;
-    }
-
-    .search-box {
-      height: 8vh;
-    }
-    
-    .search-box input button {
-      /* box-sizing: border-box; */
-      height: 16px;
-      font-size: 12px;
-    }
-
-    
+      }
     
     }

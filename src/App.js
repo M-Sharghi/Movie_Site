@@ -15,7 +15,6 @@ import MovieBioPage from "./pages/Movie_Bio";
 import TVShowsBioPage from "./pages/TV_Shows_Bio";
 import TermsOfServicePage from "./pages/Terms_Of_Service";
 import GenresPage from "./pages/Genres";
-import CookieConsent from "react-cookie-consent";
 
 
 function App() {
@@ -42,18 +41,6 @@ function App() {
           <Route path="/genres/:genre/:genre_name/:genre_id" element={<GenresPage />}/>
         </Routes>
       </BrowserRouter>
-      <CookieConsent 
-      debug={true} 
-      location="bottom" 
-      style={{background:"black",textAlign:"left"}}
-      buttonStyle={{color:"#000", background:"#cbd842",fontSize:"16px", borderRadius:"4px"}}
-      >
-        This site uses cookie. See our{" "}
-        <a href="/Terms_Of_Service" style={{ color: "#cbd842" }}>
-          privacy policy
-        </a>{" "}
-        for more
-      </CookieConsent>
     </div>
   );
 }
