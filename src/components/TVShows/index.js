@@ -9,7 +9,7 @@ function TVShows(props) {
         let img_url = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
         let img_popular_tv_shows = `${img_url}${item.poster_path}`;
         return (
-          <div>
+          <div key={item.id}>
             <div className="Pages_Picflex" key={item.id}>
               <Link to={`/tv/${item.id}`}>
                 <img className="Pages_Image" src={img_popular_tv_shows}></img>

@@ -9,7 +9,7 @@ function TopRated(props) {
         let img_url = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
         let img_top_rated_movie = `${img_url}${item.poster_path}`;
         return (
-          <div>
+          <div key={item.id}>
             <div className="Pages_Picflex" key={item.id}>
               <Link to={`/movie/${item.id}`}>
                 <img className="Pages_Image" src={img_top_rated_movie}></img>

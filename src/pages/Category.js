@@ -50,7 +50,7 @@ function Category() {
   let tv_css = selected === "tv" ? "btn_show" : "";
   let choice = filter_choice.map((item) => {
     return (
-        <div className="category_genres">
+        <div className="category_genres" key={item.id}>
           <Link to={`/genres/${selected}/${item.name}/${item.id}`}>{item.name}</Link>
         </div>
     );

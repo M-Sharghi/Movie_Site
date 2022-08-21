@@ -25,6 +25,7 @@ function Filter(props) {
         return { label: item.name, id: item.id };
       })}
       sx={{ width: 400 }}
+      isOptionEqualToValue={(option, value) => option.value === value.value}
       renderInput={(params) => (
         <ThemeProvider theme={theme}>
           <TextField

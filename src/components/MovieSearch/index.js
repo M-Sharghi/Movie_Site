@@ -25,6 +25,7 @@ function Filter(props){
                     return{label:item.title,id:item.id}
                 })}
                 sx={{ width: 400}}
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 renderInput={(params) => <ThemeProvider theme={theme}>
                     <TextField {...params} 
                     sx={{"& .MuiInputLabel-root": { color: "white" }, borderBottom: "1px solid white", "& .MuiInput-input":{color: "white"}}}

@@ -12,7 +12,6 @@ let NavLinks = styled.div`
   width: 60%;
 `;
 
-
 let NavActions = styled.div`
   // width: 128px;
 `;
