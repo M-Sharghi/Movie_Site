@@ -24,6 +24,7 @@ function App() {
   const [input, setInput] = useState("inception");
   const [list, setList] = useState([]);
 
+
   function handleSearch() {
     search_trailer(input).then((keys) => {
       setList(keys);
@@ -50,6 +51,8 @@ function App() {
         </button>
       </div>
       {list.map((key) => {
+        /* Responsive Player */
+        if(window.innerWidth >480){
           return (
             <ReactPlayer
               url={`https://youtu.be/${key}`}
@@ -57,7 +60,17 @@ function App() {
               light="/icons/h_p.jpg"
               playing={true}
             />
-          ); 
+          )} else if(window.innerWidth <=480){
+            return (
+              <ReactPlayer
+                url={`https://youtu.be/${key}`}
+                controls={true}
+                light="/icons/h_p.jpg"
+                playing={true}
+                width={400}
+              />
+            )
+          }
         }
       )}
     </div>

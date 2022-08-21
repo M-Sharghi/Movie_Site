@@ -6,7 +6,7 @@ import TVShows_Menu from "../TVShows_Menu";
 
 function Nav(){  
     
-    
+    if(window.innerWidth >480){
     return(
         <Nav_Container className="flex navpadding">
             <NavLinks className="flex">
@@ -23,7 +23,11 @@ function Nav(){
                 {/* <button>Login</button> */}
             </NavActions>
         </Nav_Container>
-    );
+    )} else if (window.innerWidth <=480){
+        return (
+            <div>Hello</div>
+        )
+    }
 }
 
 export default Nav;
