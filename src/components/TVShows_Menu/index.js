@@ -17,8 +17,7 @@ export default function App() {
   };
   return (
     <div>
-      <Link to="" onClick={handleClick} className="links">TV Shows
-      </Link>
+      <Link to="" onClick={handleClick} className="links">TV Shows</Link>
       <Menu
         anchorEl={anchorEl}
         keepMounted

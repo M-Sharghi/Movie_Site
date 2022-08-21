@@ -17,5 +17,11 @@ let NavActions = styled.div`
   // width: 128px;
 `;
 
+let Mobile_Submenu = styled.div`
+  padding: 4px 48px;
+  font-family: sans-serif;
+  font-size: 12px;
+`;
 
-export { Nav_Container, NavLinks, NavActions };
+
+export { Nav_Container, NavLinks, NavActions, Mobile_Submenu };

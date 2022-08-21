@@ -43,6 +43,17 @@ a {
   flex-wrap: wrap;
 }
 
+.flex_mobile {
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  font-family: sans-serif;
+  padding: 16px;
+  color: #A52A2A;
+  font-size: 24px;
+}
+
+
 .auto {
   width: 100%;
   max-width: 1100px;
@@ -190,7 +201,12 @@ a {
     /* background-image: radial-gradient(circle 375px at 28% 145%,#7633ff,transparent 90%); */
   }
 
-
+  .mobile_menu{
+    padding-left: 4px;
+    color: #A52A2A;
+    font-size: 14px;
+    font-weight: bold;
+  }
   @media only screen and (max-width: 480px) {
 
     .home_input{
