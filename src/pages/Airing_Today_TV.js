@@ -32,7 +32,7 @@ function Airing_Today_TV(){
             <div>
                 <Nav />
                 <div className=" auto flex">
-                    <h1>TV Shows Airing Today</h1>
+                    <h1>Airing Today TV</h1>
                     <Search list={data} />
                 </div>
                 <AiringTodayTV list={data}/>

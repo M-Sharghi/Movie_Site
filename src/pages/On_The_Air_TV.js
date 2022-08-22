@@ -32,7 +32,7 @@ function On_The_Air_TV(){
             <div>
                 <Nav />
                 <div className=" auto flex">
-                    <h1>Currently Airing TV Shows</h1>
+                    <h1>Currently Airing TV</h1>
                     <Search list={data} />
                 </div>
                 <OnTheAirTV list={data}/>

@@ -1,4 +1,3 @@
-import { People_name, Pic_flex, Image, Mob_Pic_flex, Mob_Image, Mob_People_name} from "./styles";
 import {Link} from "react-router-dom";
 
 
@@ -13,21 +12,14 @@ function Peoples(props){
                 let man_img="/icons/man.jpg";
                 let gender_img=`${item.gender}`==1 ? `${woman_img}` : `${man_img}` ; /* check img gender*/
                 let img_is_null=`${item.profile_path}`!== "null" ? `${img_people}` : `${gender_img}` ; /* check if img is null*/
-                if (window.innerWidth > 480) {
                 return (
-                    <Pic_flex key={item.id}>
-                        <Link to={`/people/${item.id}`}><Image src={img_is_null} ></Image></Link>
-                        <Link to={`/people/${item.id}`}><People_name>{item.name}</People_name></Link>
-                    </Pic_flex>
-                )}else if (window.innerWidth <= 480) {
-                    return (
-                        <Mob_Pic_flex key={item.id}>
-                            <Link to={`/people/${item.id}`}><Mob_Image src={img_is_null} ></Mob_Image></Link>
-                            <Link to={`/people/${item.id}`}><Mob_People_name>{item.name}</Mob_People_name></Link>
-                        </Mob_Pic_flex>
-                        )
-                    }
-                })}
+                    <div className="Pic_flex" key={item.id}>
+                        <Link to={`/people/${item.id}`}><img className="Image" src={img_is_null} /></Link>
+                        <Link to={`/people/${item.id}`}><div className="People_name">{item.name}</div></Link>
+                    </div>
+                    )
+                }
+            )}
             </div>
         </div>
     );

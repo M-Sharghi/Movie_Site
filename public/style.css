@@ -254,8 +254,30 @@ a {
   width:300px;
 }
 
+.People_name{
+  width: 230px;
+  padding:10px 12px;
+  font-size: large;
+  text-align: left;
+  height: 32px;
+}
+
+.Pic_flex {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px
+}
+
+
+.Image {
+  width: 235px;
+  height: 280px;
+  border-radius: 12px;
+}
+
 
 @media only screen and (max-width: 480px) {
+
   .btn_show {
     background-color: #a52a2a;
     border-radius: 64px;
@@ -278,9 +300,7 @@ a {
     border-radius: 32px;
     font-size: 12px;
   }
-}
 
-@media only screen and (max-width: 480px) {
   .Pages_Title {
     width: 120px;
     padding-left: 16px;
@@ -305,21 +325,17 @@ a {
   .Pages_Chart {
     width: 32px;
     position: absolute;
-    left: 20px;
+    left: 15px;
     bottom: -12px;
   }
-}
 
-@media only screen and (max-width: 480px) {
   .pagination{
     width:365px;
     padding: 16px 0px;
   }
-}
 
-@media only screen and (max-width: 480px) {
   h1{
-    font-size: 16px;
+    font-size: 14px;
     padding: 40px 12px 12px 12px;
   }
 
@@ -327,4 +343,26 @@ a {
     width:200px;
     padding: 12px;
   }
+
+  .People_name {
+    width: 120px;
+    padding:10px 8px 10px 12px;
+    font-size: 10px;
+    text-align: left;
+    height: 24px;
+  }
+
+  .Pic_flex {
+    display: flex;
+    flex-direction:column;
+    padding-top:32px
+  }
+ 
+  .Image  {
+    width: 100px;
+    height: 180px;
+    border-radius: 12px;
+  }
+
 }
+

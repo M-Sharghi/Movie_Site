@@ -32,7 +32,7 @@ function Top_Rated_TV(){
             <div>
                 <Nav />
                 <div className=" auto flex">
-                    <h1>Top Rated TV Shows</h1>
+                    <h1>Top Rated TV</h1>
                     <Search list={data} />
                 </div>
                 <TopRatedTV list={data}/>

@@ -31,7 +31,7 @@ function TV_Shows(){
             <div>
                 <Nav />
                 <div className=" auto flex">
-                    <h1>Popular TV Shows</h1>
+                    <h1>Popular TV</h1>
                     <Search list={data} />
                 </div>
                 <TVShows list={data}/>

@@ -17,6 +17,7 @@ function Filter(props){
     let navigate = useNavigate();
     return (
             <Autocomplete
+                className='autocomplete'
                 disablePortal
                 id="combo-box-demo"
                 autoHighlight={true}
@@ -24,11 +25,10 @@ function Filter(props){
                 options={props.list.map((item)=>{
                     return{label:item.title,id:item.id}
                 })}
-                sx={{ width: 400}}
                 isOptionEqualToValue={(option, value) => option.value === value.value}
                 renderInput={(params) => <ThemeProvider theme={theme}>
                     <TextField {...params} 
-                    sx={{"& .MuiInputLabel-root": { color: "white" }, borderBottom: "1px solid white", "& .MuiInput-input":{color: "white"}}}
+                    sx={{"& .MuiInputLabel-root": { color: "white", fontSize:"14px" }, borderBottom: "1px solid white", "& .MuiInput-input":{color: "white"}}}
                     type="search"
                     color="secondary"
                     label="Search ..." 
