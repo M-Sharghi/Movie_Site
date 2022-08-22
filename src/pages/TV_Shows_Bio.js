@@ -2,14 +2,14 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { get_tv_shows_bio, get_tv_shows_credits, get_movie_recommendations} from "../helpers/server";
+import { get_tv_shows_bio, get_tv_shows_credits, get_tv_recommendations} from "../helpers/server";
 import TVShowsBio from "../components/TVShowsBio";
 
 
 async function get_tv(id){
     let tv_bio = get_tv_shows_bio(id);
     let tv_credit = get_tv_shows_credits(id);
-    let tv_recommendation = get_movie_recommendations(id);
+    let tv_recommendation = get_tv_recommendations(id);
     let output = await Promise.all([ tv_bio, tv_credit, tv_recommendation ]);
     return output;
 }

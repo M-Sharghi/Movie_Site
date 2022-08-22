@@ -245,3 +245,70 @@ a {
     font-size: 12px;
   }
 }
+
+.pagination{
+  padding: 64px;
+}
+
+
+@media only screen and (max-width: 480px) {
+  .btn_show {
+    background-color: #a52a2a;
+    border-radius: 64px;
+    padding: 12px 32px;
+  }  
+
+  .category_filter {
+    width: 300px;
+    background-color: #232328;
+    border: none;
+    border-radius: 12px;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+  
+  .category_genres {
+    width: 160px;
+    background-image: linear-gradient(90deg, #6b8e23 -7.22%, #a52a2a 109.17%);
+    border-radius: 32px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Pages_Title {
+    width: 120px;
+    padding-left: 16px;
+    font-size: 10px;
+    text-align: left;
+    height: 64px;
+  }
+  
+  .Pages_Picflex {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    position: relative;
+  }
+  
+  .Pages_Image {
+    width: 100px;
+    height: 180px;
+    border-radius: 12px;
+  }
+  
+  .Pages_Chart {
+    width: 32px;
+    position: absolute;
+    left: 20px;
+    bottom: -12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .pagination{
+    width:360px;
+    padding: 16px 0px;
+  }
+}

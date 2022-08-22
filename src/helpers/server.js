@@ -139,6 +139,14 @@ export async function get_popular_movie(page) {
     return data;
   }
 
+  export async function get_tv_recommendations(id) {
+    let tv_recommendations=`${base_url}/tv/${id}/recommendations?api_key=${api_key}`;
+    let response = await fetch(tv_recommendations);
+    let body = await response.json();
+    let data = body;
+    return data;
+  }
+
   export async function get_tv_shows_bio(id) {
     let tv_shows_bio=`${base_url}/tv/${id}?api_key=${api_key}`;
     let response = await fetch(tv_shows_bio);
