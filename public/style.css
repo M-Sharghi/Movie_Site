@@ -207,6 +207,92 @@ a {
   );
 }
 
+.pagination {
+  padding: 64px;
+}
+
+.autocomplete {
+  width: 300px;
+}
+
+.People_name {
+  width: 230px;
+  padding: 10px 12px;
+  font-size: large;
+  text-align: left;
+  height: 32px;
+}
+
+.Pic_flex {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+}
+
+.Image {
+  width: 235px;
+  height: 280px;
+  border-radius: 12px;
+}
+
+.pic_bio {
+  text-align: left;
+  width: 40%;
+}
+
+.image_bio {
+  width: 300px;
+  height: 450px;
+  border-radius: 16px;
+}
+
+.h2_bio{
+  padding-top: 32px;
+}
+
+.biography {
+  text-align: left;
+  width: 100%;
+}
+
+.text_bio {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  text-align: left;
+  width: 60%;
+  height: 545px;
+}
+
+.act_container_bio {
+  color: #696969;
+  width: 100%;
+  padding: 24px 64px;
+  border-radius: 16px;
+}
+
+.table_bio {
+  border-bottom: 1px solid #ccc;
+}
+
+.first_col_bio {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 4px;
+  text-align: left;
+  width: 25%;
+}
+
+.cols_bio {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  width: 37.5%;
+}
+
+
+/* -----Responsive for mobile----- */
+
 @media only screen and (max-width: 480px) {
   .home_input {
     width: 250px;
@@ -244,45 +330,12 @@ a {
   .trailer {
     font-size: 12px;
   }
-}
-
-.pagination{
-  padding: 64px;
-}
-
-.autocomplete{
-  width:300px;
-}
-
-.People_name{
-  width: 230px;
-  padding:10px 12px;
-  font-size: large;
-  text-align: left;
-  height: 32px;
-}
-
-.Pic_flex {
-  display: flex;
-  flex-direction: column;
-  padding-top: 32px
-}
-
-
-.Image {
-  width: 235px;
-  height: 280px;
-  border-radius: 12px;
-}
-
-
-@media only screen and (max-width: 480px) {
 
   .btn_show {
     background-color: #a52a2a;
     border-radius: 64px;
     padding: 12px 32px;
-  }  
+  }
 
   .category_filter {
     width: 300px;
@@ -293,7 +346,7 @@ a {
     margin-bottom: 24px;
     font-size: 16px;
   }
-  
+
   .category_genres {
     width: 160px;
     background-image: linear-gradient(90deg, #6b8e23 -7.22%, #a52a2a 109.17%);
@@ -308,20 +361,20 @@ a {
     text-align: left;
     height: 64px;
   }
-  
+
   .Pages_Picflex {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
     position: relative;
   }
-  
+
   .Pages_Image {
     width: 100px;
     height: 180px;
     border-radius: 12px;
   }
-  
+
   .Pages_Chart {
     width: 32px;
     position: absolute;
@@ -329,24 +382,24 @@ a {
     bottom: -12px;
   }
 
-  .pagination{
-    width:365px;
+  .pagination {
+    width: 365px;
     padding: 16px 0px;
   }
 
-  h1{
+  h1 {
     font-size: 14px;
     padding: 40px 12px 12px 12px;
   }
 
-  .autocomplete{
-    width:200px;
+  .autocomplete {
+    width: 200px;
     padding: 12px;
   }
 
   .People_name {
     width: 120px;
-    padding:10px 8px 10px 12px;
+    padding: 10px 8px 10px 12px;
     font-size: 10px;
     text-align: left;
     height: 24px;
@@ -354,15 +407,65 @@ a {
 
   .Pic_flex {
     display: flex;
-    flex-direction:column;
-    padding-top:32px
+    flex-direction: column;
+    padding-top: 32px;
   }
- 
-  .Image  {
-    width: 100px;
+
+  .Image {
+    width: 110px;
     height: 180px;
     border-radius: 12px;
   }
 
-}
+  .image_bio {
+    width: 150px;
+    height: 250px;
+    padding: 0px 16px;
+  }
 
+  .text_bio {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 340px;
+    font-size: 10px;
+  }
+
+  .h2_bio{
+    padding: 24px 16px 0px 16px;
+    font-size: 16px;
+  }
+
+  .biography {
+    text-align: left;
+    width: 100%;
+    font-size: 10px;
+    padding: 0px 16px;
+  }
+
+  .act_container_bio {
+    color: #696969;
+    width: 100%;
+    padding: 0px 16px;
+    font-size: 10px;
+  }
+
+  .table_bio {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .first_col_bio {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+    text-align: left;
+    width: 25%;
+  }
+
+  .cols_bio {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    width: 37.5%;
+  }
+}

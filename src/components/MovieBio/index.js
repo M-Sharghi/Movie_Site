@@ -1,4 +1,4 @@
-import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1} from "./styles";
+import { Pic_bio, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1} from "./styles";
 import { Link } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -19,11 +19,11 @@ function MovieBio(props) {
       : "There isn't any overview !";
   return (
     <div className="flex auto">
-      <Pic_flex key={props.list.id}>
+      <Pic_bio key={props.list.id}>
         <span>
           <Image src={img_movie}></Image>
         </span>
-      </Pic_flex>
+      </Pic_bio>
       <Text_flex>
         <h1>{props.list.title}</h1>
         <span style={{ width: 80 }}>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-let Pic_flex = styled.div`
+let Pic_bio = styled.div`
     text-align: left;
     width: 40%;
 `;
@@ -54,6 +54,6 @@ let H1 = styled.h1`
 `;
 
 
-export { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1};
+export { Pic_bio, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1};
 
 

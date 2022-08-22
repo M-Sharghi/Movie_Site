@@ -1,7 +1,8 @@
-import { Pic_flex, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1 } from "./styles";
-
 function PersonBio(props) {
-  let biography = props.list.biography !== "" ? props.list.biography : "There isn't any biography !" ;
+  let biography =
+    props.list.biography !== ""
+      ? props.list.biography
+      : "There isn't any biography !";
   let img_profile = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
   let img_people = `${img_profile}${props.list.profile_path}`;
   let gender =
@@ -18,15 +19,15 @@ function PersonBio(props) {
       : `${gender_img}`; /* check if img is null*/
   return (
     <div className="flex auto">
-      <Pic_flex key={props.list.id}>
+      <div key={props.list.id}>
         <span>
-          <Image src={img_is_null}></Image>
+          <img className="image_bio" src={img_is_null} />
         </span>
         <br />
         <br />
-      </Pic_flex>
-      <Text_flex>
-        <h1>{props.list.name}</h1>
+      </div>
+      <div className="text_bio">
+        <h2>{props.list.name}</h2>
         <h3 style={{ color: "#A52A2A" }}>
           <i>Personal Info:</i>
         </h3>
@@ -34,70 +35,70 @@ function PersonBio(props) {
         <h4>Gender : {gender}</h4>
         <h4>Birthday : {props.list.birthday}</h4>
         <h4>Place of Birth : {props.list.place_of_birth}</h4>
-      </Text_flex>
-      <div style={{ textAlign: "left", width:"100%" }}>
-        <H1>
+      </div>
+      <div className="biography">
+        <h2>
           <i>Biography</i>
-        </H1>
+        </h2>
         <p>{biography}</p>
       </div>
-      <H1>Acting Information</H1>
-      <Act_Container>
-        <Table className="flex">
-          <First_Col>
+      <h2 className="h2_bio">Acting Information</h2>
+      <div className="act_container_bio">
+        <div className="flex table_bio">
+          <span className="first_col_bio">
             <h3>Release date</h3>
-          </First_Col>
-          <Cols>
+          </span>
+          <span className="cols_bio">
             <h3>Title</h3>
-          </Cols>
-          <Cols>
+          </span>
+          <span className="cols_bio">
             <h3>Character</h3>
-          </Cols>
-        </Table>
+          </span>
+        </div>
         {props.act.map((item) => {
           let release_date =
             `${item.release_date}` == "" ? " " : `${item.release_date}`;
           let character = `${item.character}` == "" ? " " : `${item.character}`;
           return (
-            <Table className="flex">
-              <First_Col>{release_date}</First_Col>
-              <Cols>{item.title}</Cols>
-              <Cols>{character}</Cols>
-            </Table>
+            <div className="flex table_bio" key={item.id}>
+              <span className="first_col_bio">{release_date}</span>
+              <span className="cols_bio">{item.title}</span>
+              <span className="cols_bio">{character}</span>
+            </div>
           );
         })}
-      </Act_Container>
-      <H1>Other Activity</H1>
-      <Act_Container>
-        <Table className="flex">
-          <First_Col>
+      </div>
+      <h2 className="h2_bio">Other Activity</h2>
+      <div className="act_container_bio">
+        <div className="flex table_bio">
+          <span className="first_col_bio">
             <h3>Release date</h3>
-          </First_Col>
-          <Cols>
+          </span>
+          <span className="cols_bio">
             <h3>Title</h3>
-          </Cols>
-          <Cols>
+          </span>
+          <span className="cols_bio">
             <h3>Activity</h3>
-          </Cols>
-        </Table>
+          </span>
+        </div>
         {props.crew.map((item) => {
           return (
-            <Table className="flex">
-              <First_Col>{item.release_date}</First_Col>
-              <Cols>{item.title}</Cols>
-              <Cols>{item.department}</Cols>
-            </Table>
+            <div className="flex table_bio" key={item.id}>
+              <span className="first_col_bio">{item.release_date}</span>
+              <span className="cols_bio">{item.title}</span>
+              <span className="cols_bio">{item.department}</span>
+            </div>
           );
         })}
-      </Act_Container>
+      </div>
       <div>
-        <H1 className="flex">Images</H1>
+        <h2 className="flex h2_bio">Images</h2>
         <div>
           {props.image.map((item) => {
             let images = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
             let images_people = `${images}${item.file_path}`;
             return (
-              <span>
+              <span key={item.id}>
                 <img
                   src={images_people}
                   style={{ width: 138, height: "175px" }}
