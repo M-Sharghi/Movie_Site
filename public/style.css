@@ -250,6 +250,10 @@ a {
   padding: 64px;
 }
 
+.autocomplete{
+  width:300px;
+}
+
 
 @media only screen and (max-width: 480px) {
   .btn_show {
@@ -310,5 +314,17 @@ a {
   .pagination{
     width:360px;
     padding: 16px 0px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1{
+    font-size: 16px;
+    padding: 40px 12px 12px 12px;
+  }
+
+  .autocomplete{
+    width:200px;
+    padding: 12px;
   }
 }
