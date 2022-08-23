@@ -1,4 +1,3 @@
-import { Pic_bio, Text_flex, Image, Act_Container, First_Col, Cols, Table, H1 } from "./styles";
 import { Link } from "react-router-dom";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -14,14 +13,14 @@ function TVShowsBio(props) {
   let overview = props.list.overview !== "" ? props.list.overview : "There isn't any overview !" ;
   return (
     <div className="flex auto">
-      <Pic_bio key={props.list.id}>
+      <div key={props.list.id}>
         <span>
-          <Image src={img_movie}></Image>
+          <img className="image_bio" src={img_movie} />
         </span>
-      </Pic_bio>
-      <Text_flex>
+      </div>
+      <div className="text_bio">
         <h1>{props.list.name}</h1>
-        <span style={{ width: 80 }}>
+        <span className="chart_bio">
           <CircularProgressbar
             styles={{
               path: { stroke: "#cbd842" },
@@ -44,11 +43,13 @@ function TVShowsBio(props) {
               })}
           </h5>
         </div>
-      </Text_flex>
-      <div style={{ textAlign: "left", width:"100%" }}>
-        <H1>
+      </div>
+      <div className="biography" 
+      // style={{ textAlign: "left", width:"100%" }}
+      >
+        <h2>
           <i>overview</i>
-        </H1>
+        </h2>
         <p>{overview}</p>
       </div>
       <ImageList
@@ -61,7 +62,7 @@ function TVShowsBio(props) {
       >
         <ImageListItem key="Subheader" cols={10}>
           <ListSubheader component="div">
-            <h1 style={{ textAlign: "left" }}>Series Cast</h1>
+            <h2 style={{ textAlign: "left" }}>Series Cast</h2>
           </ListSubheader>
         </ImageListItem>
         {props.act.map((item) => {
@@ -82,8 +83,7 @@ function TVShowsBio(props) {
               to={`/people/${item.id}`}
             >
               <img
-                src={`${img_is_null}?w=248&fit=crop&auto=format`}
-                srcSet={`${img_is_null}?w=248&fit=crop&auto=format&dpr=4 2x`}
+                src={`${img_is_null}`}
                 alt={item.name}
                 loading="lazy"
                 style={{ width: 138, height: 175 }}
@@ -98,29 +98,29 @@ function TVShowsBio(props) {
           );
         })}
       </ImageList>
-      <H1>Crew Details</H1>
-      <Act_Container>
-        <Table className="flex">
-          <First_Col>
+      <h2 className="h2_bio">Crew Details</h2>
+      <div className="act_container_bio">
+        <div className="flex table_bio">
+          <span className="first_col_bio">
             <h3>Department</h3>
-          </First_Col>
-          <Cols>
+          </span>
+          <span className="cols_bio">
             <h3>Name</h3>
-          </Cols>
-          <Cols>
+          </span>
+          <span className="cols_bio">
             <h3>Job</h3>
-          </Cols>
-        </Table>
+          </span>
+        </div>
         {props.crew.map((item) => {
           return (
-            <Table className="flex">
-              <First_Col>{item.department}</First_Col>
-              <Cols>{item.name}</Cols>
-              <Cols>{item.job}</Cols>
-            </Table>
+            <div className="flex table_bio">
+              <span className="first_col_bio">{item.department}</span>
+              <span className="cols_bio">{item.name}</span>
+              <span className="cols_bio">{item.job}</span>
+            </div>
           );
         })}
-      </Act_Container>
+      </div>
     </div>
   );
 }

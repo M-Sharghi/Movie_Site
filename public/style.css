@@ -290,6 +290,10 @@ a {
   width: 37.5%;
 }
 
+.chart_bio{
+  width: 80px;
+}
+
 
 /* -----Responsive for mobile----- */
 
@@ -419,7 +423,7 @@ a {
 
   .image_bio {
     width: 150px;
-    height: 250px;
+    height: 260px;
     padding: 0px 16px;
   }
 
@@ -448,6 +452,7 @@ a {
     width: 100%;
     padding: 0px 16px;
     font-size: 10px;
+    padding-bottom: 32px;
   }
 
   .table_bio {
@@ -467,5 +472,9 @@ a {
     padding-bottom: 8px;
     text-align: left;
     width: 37.5%;
+  }
+
+  .chart_bio{
+    width: 30px;
   }
 }
