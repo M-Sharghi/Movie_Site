@@ -55,6 +55,7 @@ function App() {
         if(window.innerWidth >480){
           return (
             <ReactPlayer
+              key={key}
               url={`https://youtu.be/${key}`}
               controls={true}
               light="/icons/h_p.jpg"
@@ -63,6 +64,7 @@ function App() {
           )} else if(window.innerWidth <=480){
             return (
               <ReactPlayer
+                key={key}
                 url={`https://youtu.be/${key}`}
                 controls={true}
                 light="/icons/h_p.jpg"

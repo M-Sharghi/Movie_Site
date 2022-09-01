@@ -8,19 +8,22 @@ import Trailers from "../components/Trailers";
 function Home() {
   let [data, setData] = useState([]);
   let [input, setInput] = useState("");
-  let [loading,setLoading]=useState(true);
-    let [error,setError]=useState(false);
+  let [loading, setLoading] = useState(true);
+  let [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     if (input !== "") {
-      get_multi_search(input).then((response) => {
-        setData(response.results);
-      }).catch((e) => {
-        setError(true)
-      }).finally(() =>{
-        setLoading(false);
-      })
+      get_multi_search(input)
+        .then((response) => {
+          setData(response.results);
+        })
+        .catch((e) => {
+          setError(true);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } else {
       setData([]);
     }
@@ -61,11 +64,10 @@ function Home() {
                     : `${gender_img}`;
                 if (item.media_type === "person") {
                   return (
-                    <div>
+                    <div key={item.id}>
                       <Link
                         className="home_search_input"
                         to={`/people/${item.id}`}
-                        key={item.id}
                       >
                         <img className="home_search_img" src={img_is_null} />
                         {item.name}
@@ -74,11 +76,10 @@ function Home() {
                   );
                 } else if (item.media_type === "movie") {
                   return (
-                    <div>
+                    <div key={item.id}>
                       <Link
                         className="home_search_input"
                         to={`/movie/${item.id}`}
-                        key={item.id}
                       >
                         <img className="home_search_img" src={img_is_null} />
                         {item.title}
@@ -87,12 +88,8 @@ function Home() {
                   );
                 } else if (item.media_type === "tv") {
                   return (
-                    <div>
-                      <Link
-                        className="home_search_input"
-                        to={`/tv/${item.id}`}
-                        key={item.id}
-                      >
+                    <div key={item.id}>
+                      <Link className="home_search_input" to={`/tv/${item.id}`}>
                         <img className="home_search_img" src={img_is_null} />
                         {item.name}
                       </Link>

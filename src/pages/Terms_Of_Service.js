@@ -6,7 +6,7 @@ function Terms_Of_Service() {
     <div>
       <Nav />
       <div className="auto">
-        <div className="container">
+        <div className="container terms_of_service">
           <h1>Website Terms and Conditions of Use</h1>
           <br />
           <h2>1. Terms</h2>

@@ -48,13 +48,12 @@ function MovieBio(props) {
           <h5>
             Genres:{" "}
             {genres.map((item) => {
-              return <span>{item.name} </span>;
+              return <span key={item.id}>{item.name} </span>;
             })}
           </h5>
         </div>
       </div>
       <div className="biography"
-      // style={{ textAlign: "left", width: "100%" }}
       >
         <h2>
           <i>overview</i>
@@ -90,7 +89,7 @@ function MovieBio(props) {
               : `${gender_img}`; /* check if img is null*/
           return (
             <ImageListItem
-              key={item.id}
+              key={item.cast_id}
               component={Link}
               to={`/people/${item.id}`}
             >
@@ -123,9 +122,9 @@ function MovieBio(props) {
             <h3>Job</h3>
           </span>
         </div>
-        {props.crew.map((item) => {
+        {props.crew.map((item,index) => {
           return (
-            <div className="flex table_bio">
+            <div className="flex table_bio" key={index}>
               <span className="first_col_bio">{item.department}</span>
               <span className="cols_bio">{item.name}</span>
               <span className="cols_bio">{item.job}</span>

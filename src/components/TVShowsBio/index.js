@@ -10,7 +10,10 @@ function TVShowsBio(props) {
   let genres = props.list.genres;
   let img_profile = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
   let img_movie = `${img_profile}${props.list.poster_path}`;
-  let overview = props.list.overview !== "" ? props.list.overview : "There isn't any overview !" ;
+  let overview =
+    props.list.overview !== ""
+      ? props.list.overview
+      : "There isn't any overview !";
   return (
     <div className="flex auto">
       <div key={props.list.id}>
@@ -38,15 +41,15 @@ function TVShowsBio(props) {
           <h5>Status : {props.list.status}</h5>
           <h5>Type : {props.list.type}</h5>
           <h5>Original Language : {props.list.original_language}</h5>
-          <h5>Genres: {genres.map((item)=>{
-              return ( <span>{item.name} </span>);
-              })}
+          <h5>
+            Genres:{" "}
+            {genres.map((item) => {
+              return <span key={item.id}>{item.name} </span>;
+            })}
           </h5>
         </div>
       </div>
-      <div className="biography" 
-      // style={{ textAlign: "left", width:"100%" }}
-      >
+      <div className="biography">
         <h2>
           <i>overview</i>
         </h2>
@@ -78,7 +81,7 @@ function TVShowsBio(props) {
               : `${gender_img}`;
           return (
             <ImageListItem
-              key={item.id}
+              key={item.credit_id}
               component={Link}
               to={`/people/${item.id}`}
             >
@@ -111,9 +114,9 @@ function TVShowsBio(props) {
             <h3>Job</h3>
           </span>
         </div>
-        {props.crew.map((item) => {
+        {props.crew.map((item, index) => {
           return (
-            <div className="flex table_bio">
+            <div className="flex table_bio" key={index}>
               <span className="first_col_bio">{item.department}</span>
               <span className="cols_bio">{item.name}</span>
               <span className="cols_bio">{item.job}</span>

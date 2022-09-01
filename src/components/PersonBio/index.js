@@ -83,7 +83,7 @@ function PersonBio(props) {
         </div>
         {props.crew.map((item) => {
           return (
-            <div className="flex table_bio" key={item.id}>
+            <div className="flex table_bio" key={item.credit_id}>
               <span className="first_col_bio">{item.release_date}</span>
               <span className="cols_bio">{item.title}</span>
               <span className="cols_bio">{item.department}</span>
@@ -94,11 +94,11 @@ function PersonBio(props) {
       <div>
         <h2 className="flex h2_bio">Images</h2>
         <div>
-          {props.image.map((item) => {
+          {props.image.map((item,index) => {
             let images = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
             let images_people = `${images}${item.file_path}`;
             return (
-              <span key={item.id}>
+              <span key={index}>
                 <img
                   src={images_people}
                   style={{ width: 138, height: "175px" }}
