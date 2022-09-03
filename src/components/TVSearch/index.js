@@ -30,7 +30,6 @@ function Filter(props) {
         <ThemeProvider theme={theme}>
           <TextField
             {...params}
-            // fullWidth
             sx={{
               "& .MuiInputLabel-root": { color: "white", fontSize:"14px" },
               borderBottom: "1px solid white",

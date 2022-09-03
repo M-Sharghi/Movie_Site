@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import MoviePage from "./pages/Movie";
-import NowPlayingMoviePage from "./pages/Now_Playing_Movie";
-import UpcomingMoviePage from "./pages/Upcoming_Movie";
-import TopRatedMoviePage from "./pages/Top_Rated_Movie";
-import TVShowsPage from "./pages/TV_Shows";
-import AiringTodayTVPage from "./pages/Airing_Today_TV";
-import OnTheAirTVPage from "./pages/On_The_Air_TV";
-import TopRatedTVPage from "./pages/Top_Rated_TV";
+import NowPlayingMoviePage from "./pages/NowPlayingMovie";
+import UpcomingMoviePage from "./pages/UpcomingMovie";
+import TopRatedMoviePage from "./pages/TopRatedMovie";
+import TVShowsPage from "./pages/TVShows";
+import AiringTodayTVPage from "./pages/AiringTodayTV";
+import OnTheAirTVPage from "./pages/OnTheAirTV";
+import TopRatedTVPage from "./pages/TopRatedTV";
 import CategoryPage from "./pages/Category";
 import PeoplePage from "./pages/People";
-import PersonBioPage from "./pages/Person_Bio";
-import MovieBioPage from "./pages/Movie_Bio";
-import TVShowsBioPage from "./pages/TV_Shows_Bio";
-import TermsOfServicePage from "./pages/Terms_Of_Service";
+import PersonBioPage from "./pages/PersonBio";
+import MovieBioPage from "./pages/MovieBio";
+import TVShowsBioPage from "./pages/TVShowsBio";
+import TermsOfServicePage from "./pages/TermsOfService";
 import GenresPage from "./pages/Genres";
 
 
