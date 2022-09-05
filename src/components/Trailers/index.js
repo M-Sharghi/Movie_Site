@@ -4,9 +4,11 @@ import { get_movie_trailer, get_movie_search } from "../../helpers/server";
 
 async function search_trailer(input) {
   const response = await get_movie_search(input);
-  const ids = response.results.map((item) => {
+  const ids = response.results
+    .map((item) => {
       return item.id;
-    }).slice(0, 1);
+    })
+    .slice(0, 1);
   const trailers_promises = ids.map((id) => {
     return get_movie_trailer(id);
   });
@@ -20,16 +22,15 @@ async function search_trailer(input) {
   return output.slice(0, 1);
 }
 
-function App() {
+function Trailer() {
   const [input, setInput] = useState("inception");
   const [list, setList] = useState([]);
-
 
   function handleSearch() {
     search_trailer(input).then((keys) => {
       setList(keys);
-    })
-  } 
+    });
+  }
 
   return (
     <div className="trailer auto">
@@ -52,7 +53,7 @@ function App() {
       </div>
       {list.map((key) => {
         /* Responsive Player */
-        if(window.innerWidth >480){
+        if (window.innerWidth > 480) {
           return (
             <ReactPlayer
               key={key}
@@ -61,22 +62,22 @@ function App() {
               light="/icons/h_p.jpg"
               playing={true}
             />
-          )} else if(window.innerWidth <=480){
-            return (
-              <ReactPlayer
-                key={key}
-                url={`https://youtu.be/${key}`}
-                controls={true}
-                light="/icons/h_p.jpg"
-                playing={true}
-                width={400}
-              />
-            )
-          }
+          );
+        } else if (window.innerWidth <= 480) {
+          return (
+            <ReactPlayer
+              key={key}
+              url={`https://youtu.be/${key}`}
+              controls={true}
+              light="/icons/h_p.jpg"
+              playing={true}
+              width={400}
+            />
+          );
         }
-      )}
+      })}
     </div>
   );
 }
 
-export default App;
+export default Trailer;
